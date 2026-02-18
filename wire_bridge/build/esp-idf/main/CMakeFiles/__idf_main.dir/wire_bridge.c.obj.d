@@ -139,10 +139,5 @@ esp-idf/main/CMakeFiles/__idf_main.dir/wire_bridge.c.obj: \
  /Users/macbookair/esp-idf/components/esp_eth/include/esp_eth_mac_esp.h \
  /Users/macbookair/esp-idf/components/esp_eth/include/esp_eth_phy.h \
  /Users/macbookair/esp-idf/components/esp_eth/include/esp_eth_netif_glue.h \
- /Users/macbookair/esp-idf/components/esp_driver_gpio/include/driver/gpio.h \
- /Users/macbookair/esp-idf/components/esp_hal_gpio/include/hal/gpio_types.h \
- /Users/macbookair/esp-idf/components/esp_hal_gpio/esp32/include/soc/gpio_num.h \
- /Users/macbookair/esp-idf/components/esp_rom/include/esp_rom_gpio.h \
- /Users/macbookair/esp-idf/components/soc/esp32/include/soc/gpio_pins.h \
- /Users/macbookair/esp-idf/components/esp_driver_gpio/include/driver/gpio_etm.h \
- /Users/macbookair/esp-idf/components/esp_hw_support/etm/include/esp_etm.h
+ /Users/macbookair/esp/ETH_02/wire_bridge/managed_components/espressif__lan87xx/include/esp_eth_phy_lan87xx.h \
+ /Users/macbookair/esp/ETH_02/wire_bridge/main/display_status.h

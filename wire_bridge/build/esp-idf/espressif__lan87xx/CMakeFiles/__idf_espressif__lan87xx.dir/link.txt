@@ -1,0 +1,2 @@
+/Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-ar qc libespressif__lan87xx.a CMakeFiles/__idf_espressif__lan87xx.dir/src/esp_eth_phy_lan87xx.c.obj
+/Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-ranlib libespressif__lan87xx.a

@@ -175,6 +175,30 @@ __idf_main/fast:
 	cd /Users/macbookair/esp/ETH_02/wire_bridge/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/build
 .PHONY : __idf_main/fast
 
+display_status.obj: display_status.c.obj
+.PHONY : display_status.obj
+
+# target to build an object file
+display_status.c.obj:
+	cd /Users/macbookair/esp/ETH_02/wire_bridge/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/display_status.c.obj
+.PHONY : display_status.c.obj
+
+display_status.i: display_status.c.i
+.PHONY : display_status.i
+
+# target to preprocess a source file
+display_status.c.i:
+	cd /Users/macbookair/esp/ETH_02/wire_bridge/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/display_status.c.i
+.PHONY : display_status.c.i
+
+display_status.s: display_status.c.s
+.PHONY : display_status.s
+
+# target to generate assembly for a file
+display_status.c.s:
+	cd /Users/macbookair/esp/ETH_02/wire_bridge/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/display_status.c.s
+.PHONY : display_status.c.s
+
 wire_bridge.obj: wire_bridge.c.obj
 .PHONY : wire_bridge.obj
 
@@ -212,6 +236,9 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... __idf_main"
+	@echo "... display_status.obj"
+	@echo "... display_status.i"
+	@echo "... display_status.s"
 	@echo "... wire_bridge.obj"
 	@echo "... wire_bridge.i"
 	@echo "... wire_bridge.s"

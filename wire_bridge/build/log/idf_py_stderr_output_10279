@@ -1,0 +1,36 @@
+Command: make -j 6 all
+Configuration Report                                  
+ ──────────────────────────────────────────────────── 
+   Parser Version: 1                                  
+   Verbosity: default                                 
+   Defaults policy: sdkconfig                         
+   Status: Finished with notifications                
+                                                      
+  Default Value Mismatch                              
+   ────────────────────────────────────────────────   
+    Using sdkconfig default values                    
+    Choice symbols with different default             
+    selection between sdkconfig and Kconfig           
+    LIBC_STDIN_LINE_ENDING: Kconfig default           
+    selection: choice deselected, sdkconfig           
+    default selection:                                
+    LIBC_STDIN_LINE_ENDING_CR                         
+    LIBC_STDOUT_LINE_ENDING: Kconfig default          
+    selection: choice deselected, sdkconfig           
+    default selection:                                
+    LIBC_STDOUT_LINE_ENDING_CRLF                      
+   ────────────────────────────────────────────────   
+ ──────────────────────────────────────────────────── 
+/Users/macbookair/esp/ETH_02/wire_bridge/main/display_status.c: In function 'display_init':
+/Users/macbookair/esp/ETH_02/wire_bridge/main/display_status.c:82:10: error: 'esp_lcd_panel_dev_config_t' has no member named 'rgb_endian'
+   82 |         .rgb_endian = LCD_RGB_ENDIAN_BGR, // ST7789 dažnai BGR; jei spalvos keistos – keisim į RGB
+      |          ^~~~~~~~~~
+/Users/macbookair/esp/ETH_02/wire_bridge/main/display_status.c:82:23: error: 'LCD_RGB_ENDIAN_BGR' undeclared (first use in this function); did you mean 'LCD_RGB_DATA_ENDIAN_BIG'?
+   82 |         .rgb_endian = LCD_RGB_ENDIAN_BGR, // ST7789 dažnai BGR; jei spalvos keistos – keisim į RGB
+      |                       ^~~~~~~~~~~~~~~~~~
+      |                       LCD_RGB_DATA_ENDIAN_BIG
+/Users/macbookair/esp/ETH_02/wire_bridge/main/display_status.c:82:23: note: each undeclared identifier is reported only once for each function it appears in
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/display_status.c.obj] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [all] Error 2

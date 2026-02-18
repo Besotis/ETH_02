@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/macbookair/esp/ETH_02/wire_bridge/main/display_status.c" "esp-idf/main/CMakeFiles/__idf_main.dir/display_status.c.obj" "gcc" "esp-idf/main/CMakeFiles/__idf_main.dir/display_status.c.obj.d"
   "/Users/macbookair/esp/ETH_02/wire_bridge/main/wire_bridge.c" "esp-idf/main/CMakeFiles/__idf_main.dir/wire_bridge.c.obj" "gcc" "esp-idf/main/CMakeFiles/__idf_main.dir/wire_bridge.c.obj.d"
   )
 

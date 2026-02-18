@@ -157,6 +157,9 @@
 		"/Users/macbookair/esp/ETH_02/wire_bridge/build/esp-idf/rt/cmake_install.cmake",
 		"/Users/macbookair/esp/ETH_02/wire_bridge/build/esp-idf/spiffs/cmake_install.cmake",
 		"/Users/macbookair/esp/ETH_02/wire_bridge/build/esp-idf/ulp/cmake_install.cmake",
+		"/Users/macbookair/esp/ETH_02/wire_bridge/build/esp-idf/lvgl__lvgl/cmake_install.cmake",
+		"/Users/macbookair/esp/ETH_02/wire_bridge/build/esp-idf/espressif__esp_lvgl_port/cmake_install.cmake",
+		"/Users/macbookair/esp/ETH_02/wire_bridge/build/esp-idf/espressif__lan87xx/cmake_install.cmake",
 		"/Users/macbookair/esp/ETH_02/wire_bridge/build/esp-idf/main/cmake_install.cmake"
 	],
 	"Parallel" : false

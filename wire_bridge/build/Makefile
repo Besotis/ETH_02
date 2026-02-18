@@ -2190,6 +2190,45 @@ __idf_spiffs/fast:
 .PHONY : __idf_spiffs/fast
 
 #=============================================================================
+# Target rules for targets named __idf_lvgl__lvgl
+
+# Build rule for target.
+__idf_lvgl__lvgl: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_lvgl__lvgl
+.PHONY : __idf_lvgl__lvgl
+
+# fast build rule for target.
+__idf_lvgl__lvgl/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/build.make esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/build
+.PHONY : __idf_lvgl__lvgl/fast
+
+#=============================================================================
+# Target rules for targets named lvgl_port_lib
+
+# Build rule for target.
+lvgl_port_lib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lvgl_port_lib
+.PHONY : lvgl_port_lib
+
+# fast build rule for target.
+lvgl_port_lib/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/espressif__esp_lvgl_port/CMakeFiles/lvgl_port_lib.dir/build.make esp-idf/espressif__esp_lvgl_port/CMakeFiles/lvgl_port_lib.dir/build
+.PHONY : lvgl_port_lib/fast
+
+#=============================================================================
+# Target rules for targets named __idf_espressif__lan87xx
+
+# Build rule for target.
+__idf_espressif__lan87xx: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_espressif__lan87xx
+.PHONY : __idf_espressif__lan87xx
+
+# fast build rule for target.
+__idf_espressif__lan87xx/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/espressif__lan87xx/CMakeFiles/__idf_espressif__lan87xx.dir/build.make esp-idf/espressif__lan87xx/CMakeFiles/__idf_espressif__lan87xx.dir/build
+.PHONY : __idf_espressif__lan87xx/fast
+
+#=============================================================================
 # Target rules for targets named __idf_main
 
 # Build rule for target.
@@ -2362,12 +2401,14 @@ help:
 	@echo "... __idf_esp_system"
 	@echo "... __idf_esp_timer"
 	@echo "... __idf_esp_wifi"
+	@echo "... __idf_espressif__lan87xx"
 	@echo "... __idf_fatfs"
 	@echo "... __idf_freertos"
 	@echo "... __idf_hal"
 	@echo "... __idf_heap"
 	@echo "... __idf_http_parser"
 	@echo "... __idf_log"
+	@echo "... __idf_lvgl__lvgl"
 	@echo "... __idf_lwip"
 	@echo "... __idf_main"
 	@echo "... __idf_mbedtls"
@@ -2390,6 +2431,7 @@ help:
 	@echo "... __idf_xtensa"
 	@echo "... builtin"
 	@echo "... everest"
+	@echo "... lvgl_port_lib"
 	@echo "... mbedtls"
 	@echo "... mbedx509"
 	@echo "... p256m"
