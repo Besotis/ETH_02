@@ -4026,9 +4026,6 @@ CMakeFiles/_project_elf_src.dir/clean:
 # Target rules for target CMakeFiles/wire_bridge.elf.dir
 
 # All Build rule for target.
-CMakeFiles/wire_bridge.elf.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
-CMakeFiles/wire_bridge.elf.dir/all: CMakeFiles/_project_elf_src.dir/all
-CMakeFiles/wire_bridge.elf.dir/all: CMakeFiles/__ldgen_output_sections.ld.dir/all
 CMakeFiles/wire_bridge.elf.dir/all: esp-idf/esp_driver_gptimer/CMakeFiles/__idf_esp_driver_gptimer.dir/all
 CMakeFiles/wire_bridge.elf.dir/all: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/all
 CMakeFiles/wire_bridge.elf.dir/all: esp-idf/unity/CMakeFiles/__idf_unity.dir/all
@@ -4036,6 +4033,8 @@ CMakeFiles/wire_bridge.elf.dir/all: esp-idf/cmock/CMakeFiles/__idf_cmock.dir/all
 CMakeFiles/wire_bridge.elf.dir/all: esp-idf/console/CMakeFiles/__idf_console.dir/all
 CMakeFiles/wire_bridge.elf.dir/all: esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/all
 CMakeFiles/wire_bridge.elf.dir/all: esp-idf/driver/CMakeFiles/__idf_driver.dir/all
+CMakeFiles/wire_bridge.elf.dir/all: esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/all
+CMakeFiles/wire_bridge.elf.dir/all: esp-idf/esp_driver_dac/CMakeFiles/__idf_esp_driver_dac.dir/all
 CMakeFiles/wire_bridge.elf.dir/all: esp-idf/esp_driver_i2c/CMakeFiles/__idf_esp_driver_i2c.dir/all
 CMakeFiles/wire_bridge.elf.dir/all: esp-idf/esp_hal_ledc/CMakeFiles/__idf_esp_hal_ledc.dir/all
 CMakeFiles/wire_bridge.elf.dir/all: esp-idf/esp_driver_ledc/CMakeFiles/__idf_esp_driver_ledc.dir/all
@@ -4072,8 +4071,9 @@ CMakeFiles/wire_bridge.elf.dir/all: esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lv
 CMakeFiles/wire_bridge.elf.dir/all: esp-idf/espressif__esp_lvgl_port/CMakeFiles/lvgl_port_lib.dir/all
 CMakeFiles/wire_bridge.elf.dir/all: esp-idf/espressif__lan87xx/CMakeFiles/__idf_espressif__lan87xx.dir/all
 CMakeFiles/wire_bridge.elf.dir/all: esp-idf/main/CMakeFiles/__idf_main.dir/all
-CMakeFiles/wire_bridge.elf.dir/all: esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/all
-CMakeFiles/wire_bridge.elf.dir/all: esp-idf/esp_driver_dac/CMakeFiles/__idf_esp_driver_dac.dir/all
+CMakeFiles/wire_bridge.elf.dir/all: CMakeFiles/_project_elf_src.dir/all
+CMakeFiles/wire_bridge.elf.dir/all: CMakeFiles/__ldgen_output_sections.ld.dir/all
+CMakeFiles/wire_bridge.elf.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/wire_bridge.elf.dir/build.make CMakeFiles/wire_bridge.elf.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/wire_bridge.elf.dir/build.make CMakeFiles/wire_bridge.elf.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num=100 "Built target wire_bridge.elf"
@@ -4266,7 +4266,6 @@ CMakeFiles/uf2-app.dir/clean:
 # Target rules for target CMakeFiles/__ldgen_output_sections.ld.dir
 
 # All Build rule for target.
-CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/esp_driver_gptimer/CMakeFiles/__idf_esp_driver_gptimer.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/unity/CMakeFiles/__idf_unity.dir/all
@@ -4274,6 +4273,8 @@ CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/cmock/CMakeFiles/__idf_cm
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/console/CMakeFiles/__idf_console.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/driver/CMakeFiles/__idf_driver.dir/all
+CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/all
+CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/esp_driver_dac/CMakeFiles/__idf_esp_driver_dac.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/esp_driver_i2c/CMakeFiles/__idf_esp_driver_i2c.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/esp_hal_ledc/CMakeFiles/__idf_esp_hal_ledc.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/esp_driver_ledc/CMakeFiles/__idf_esp_driver_ledc.dir/all
@@ -4310,8 +4311,7 @@ CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/lvgl__lvgl/CMakeFiles/__i
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/espressif__esp_lvgl_port/CMakeFiles/lvgl_port_lib.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/espressif__lan87xx/CMakeFiles/__idf_espressif__lan87xx.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/main/CMakeFiles/__idf_main.dir/all
-CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/all
-CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/esp_driver_dac/CMakeFiles/__idf_esp_driver_dac.dir/all
+CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/__ldgen_output_sections.ld.dir/build.make CMakeFiles/__ldgen_output_sections.ld.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/__ldgen_output_sections.ld.dir/build.make CMakeFiles/__ldgen_output_sections.ld.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num= "Built target __ldgen_output_sections.ld"
@@ -4329,7 +4329,6 @@ __ldgen_output_sections.ld: CMakeFiles/__ldgen_output_sections.ld.dir/rule
 .PHONY : __ldgen_output_sections.ld
 
 # codegen rule for target.
-CMakeFiles/__ldgen_output_sections.ld.dir/codegen: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/codegen: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/codegen: esp-idf/unity/CMakeFiles/__idf_unity.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/codegen: esp-idf/console/CMakeFiles/__idf_console.dir/all
@@ -4355,6 +4354,7 @@ CMakeFiles/__ldgen_output_sections.ld.dir/codegen: esp-idf/wear_levelling/CMakeF
 CMakeFiles/__ldgen_output_sections.ld.dir/codegen: esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/codegen: esp-idf/espressif__esp_lvgl_port/CMakeFiles/lvgl_port_lib.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/codegen: esp-idf/espressif__lan87xx/CMakeFiles/__idf_espressif__lan87xx.dir/all
+CMakeFiles/__ldgen_output_sections.ld.dir/codegen: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/__ldgen_output_sections.ld.dir/build.make CMakeFiles/__ldgen_output_sections.ld.dir/codegen
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num= "Finished codegen for target __ldgen_output_sections.ld"
 .PHONY : CMakeFiles/__ldgen_output_sections.ld.dir/codegen
@@ -4702,7 +4702,7 @@ esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all: esp-idf/esp_stdio/CMakeFiles/__i
 
 # Build rule for subdir invocation for target.
 esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/rule
@@ -4734,7 +4734,7 @@ esp-idf/esp_stdio/CMakeFiles/__idf_esp_stdio.dir/all: esp-idf/esp_hal_gpspi/CMak
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_stdio/CMakeFiles/__idf_esp_stdio.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_stdio/CMakeFiles/__idf_esp_stdio.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_stdio/CMakeFiles/__idf_esp_stdio.dir/rule
@@ -4766,7 +4766,7 @@ esp-idf/esp_hal_gpspi/CMakeFiles/__idf_esp_hal_gpspi.dir/all: esp-idf/esp_hal_cl
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_hal_gpspi/CMakeFiles/__idf_esp_hal_gpspi.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_gpspi/CMakeFiles/__idf_esp_hal_gpspi.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_hal_gpspi/CMakeFiles/__idf_esp_hal_gpspi.dir/rule
@@ -4798,7 +4798,7 @@ esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/all: esp-idf/esp_hal_ms
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_hal_clock/CMakeFiles/__idf_esp_hal_clock.dir/rule
@@ -4830,7 +4830,7 @@ esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/all: esp-idf/esp_hal_secu
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_hal_mspi/CMakeFiles/__idf_esp_hal_mspi.dir/rule
@@ -4862,7 +4862,7 @@ esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/all: esp-idf/esp_
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_hal_security/CMakeFiles/__idf_esp_hal_security.dir/rule
@@ -5150,7 +5150,7 @@ esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/all: esp-idf/esp_boot
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/rule
@@ -5182,7 +5182,7 @@ esp-idf/esp_bootloader_format/CMakeFiles/__idf_esp_bootloader_format.dir/all: es
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_bootloader_format/CMakeFiles/__idf_esp_bootloader_format.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_bootloader_format/CMakeFiles/__idf_esp_bootloader_format.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_bootloader_format/CMakeFiles/__idf_esp_bootloader_format.dir/rule
@@ -5214,7 +5214,7 @@ esp-idf/app_update/CMakeFiles/__idf_app_update.dir/all: esp-idf/esp_partition/CM
 
 # Build rule for subdir invocation for target.
 esp-idf/app_update/CMakeFiles/__idf_app_update.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/app_update/CMakeFiles/__idf_app_update.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/app_update/CMakeFiles/__idf_app_update.dir/rule
@@ -5246,7 +5246,7 @@ esp-idf/esp_partition/CMakeFiles/__idf_esp_partition.dir/all: esp-idf/efuse/CMak
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_partition/CMakeFiles/__idf_esp_partition.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_partition/CMakeFiles/__idf_esp_partition.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_partition/CMakeFiles/__idf_esp_partition.dir/rule
@@ -5278,7 +5278,7 @@ esp-idf/efuse/CMakeFiles/__idf_efuse.dir/all: esp-idf/esp_security/CMakeFiles/__
 
 # Build rule for subdir invocation for target.
 esp-idf/efuse/CMakeFiles/__idf_efuse.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/efuse/CMakeFiles/__idf_efuse.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/efuse/CMakeFiles/__idf_efuse.dir/rule
@@ -5534,7 +5534,7 @@ esp-idf/esp_security/CMakeFiles/__idf_esp_security.dir/all: esp-idf/esp_driver_g
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_security/CMakeFiles/__idf_esp_security.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 41
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_security/CMakeFiles/__idf_esp_security.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_security/CMakeFiles/__idf_esp_security.dir/rule
@@ -5566,7 +5566,7 @@ esp-idf/esp_driver_gpio/CMakeFiles/__idf_esp_driver_gpio.dir/all: esp-idf/esp_ha
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_driver_gpio/CMakeFiles/__idf_esp_driver_gpio.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 41
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_gpio/CMakeFiles/__idf_esp_driver_gpio.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_driver_gpio/CMakeFiles/__idf_esp_driver_gpio.dir/rule
@@ -5598,7 +5598,7 @@ esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/all: esp-idf/esp_pm/CMake
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 41
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_hal_uart/CMakeFiles/__idf_esp_hal_uart.dir/rule
@@ -5630,7 +5630,7 @@ esp-idf/esp_pm/CMakeFiles/__idf_esp_pm.dir/all: esp-idf/esp_mm/CMakeFiles/__idf_
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_pm/CMakeFiles/__idf_esp_pm.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 41
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_pm/CMakeFiles/__idf_esp_pm.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_pm/CMakeFiles/__idf_esp_pm.dir/rule
@@ -5662,7 +5662,7 @@ esp-idf/esp_mm/CMakeFiles/__idf_esp_mm.dir/all: esp-idf/esp_driver_dma/CMakeFile
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_mm/CMakeFiles/__idf_esp_mm.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 41
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_mm/CMakeFiles/__idf_esp_mm.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_mm/CMakeFiles/__idf_esp_mm.dir/rule
@@ -5694,7 +5694,7 @@ esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/all: esp-idf/mbedtls/
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 41
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_driver_dma/CMakeFiles/__idf_esp_driver_dma.dir/rule
@@ -5726,7 +5726,7 @@ esp-idf/mbedtls/CMakeFiles/__idf_mbedtls.dir/all: esp-idf/mbedtls/mbedtls/tf-psa
 
 # Build rule for subdir invocation for target.
 esp-idf/mbedtls/CMakeFiles/__idf_mbedtls.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 41
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/mbedtls/CMakeFiles/__idf_mbedtls.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/mbedtls/CMakeFiles/__idf_mbedtls.dir/rule
@@ -5854,7 +5854,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/all: esp-i
 
 # Build rule for subdir invocation for target.
 esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 36
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 35
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/CMakeFiles/tfpsacrypto.dir/rule
@@ -5886,7 +5886,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/everest/CMakeFiles/everest.dir/all
 
 # Build rule for subdir invocation for target.
 esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/everest/CMakeFiles/everest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 41
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/everest/CMakeFiles/everest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/everest/CMakeFiles/everest.dir/rule
@@ -5918,7 +5918,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/p256-m/CMakeFiles/p256m.dir/all: e
 
 # Build rule for subdir invocation for target.
 esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/p256-m/CMakeFiles/p256m.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 41
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/p256-m/CMakeFiles/p256m.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/p256-m/CMakeFiles/p256m.dir/rule
@@ -5950,7 +5950,7 @@ esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/all
 
 # Build rule for subdir invocation for target.
 esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 41
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/CMakeFiles/builtin.dir/rule
@@ -5982,7 +5982,7 @@ esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedx509.dir/all: esp-idf/mbedtls/mbe
 
 # Build rule for subdir invocation for target.
 esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedx509.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 38
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 37
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedx509.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedx509.dir/rule
@@ -6014,7 +6014,7 @@ esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/all: esp-idf/mbedtls/mbed
 
 # Build rule for subdir invocation for target.
 esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 38
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 37
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedtls.dir/rule
@@ -6046,7 +6046,7 @@ esp-idf/mbedtls/mbedtls/library/CMakeFiles/lib.dir/all: esp-idf/xtensa/CMakeFile
 
 # Build rule for subdir invocation for target.
 esp-idf/mbedtls/mbedtls/library/CMakeFiles/lib.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/mbedtls/mbedtls/library/CMakeFiles/lib.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/mbedtls/mbedtls/library/CMakeFiles/lib.dir/rule
@@ -6078,7 +6078,7 @@ esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/all: esp-idf/esp_hal_wdt/
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 35
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 34
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_hal_timg/CMakeFiles/__idf_esp_hal_timg.dir/rule
@@ -6110,7 +6110,7 @@ esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/all: esp-idf/esp_hal_i2s/CM
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 35
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 34
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_hal_wdt/CMakeFiles/__idf_esp_hal_wdt.dir/rule
@@ -6142,7 +6142,7 @@ esp-idf/esp_hal_i2s/CMakeFiles/__idf_esp_hal_i2s.dir/all: esp-idf/esp_hal_ana_co
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_hal_i2s/CMakeFiles/__idf_esp_hal_i2s.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 35
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 34
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_i2s/CMakeFiles/__idf_esp_hal_i2s.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_hal_i2s/CMakeFiles/__idf_esp_hal_i2s.dir/rule
@@ -6174,7 +6174,7 @@ esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/all: esp-idf/boot
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 35
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 34
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_hal_ana_conv/CMakeFiles/__idf_esp_hal_ana_conv.dir/rule
@@ -6206,7 +6206,7 @@ esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/all: esp-idf/
 
 # Build rule for subdir invocation for target.
 esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 35
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 34
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/rule
@@ -6238,7 +6238,7 @@ esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/all: esp-idf/esp_system/CMakeFi
 
 # Build rule for subdir invocation for target.
 esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 34
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 33
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/rule
@@ -6270,7 +6270,7 @@ esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/all: esp-idf/esp_common/CMake
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 33
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 32
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/rule
@@ -6366,7 +6366,7 @@ esp-idf/esp_common/CMakeFiles/__idf_esp_common.dir/all: esp-idf/esp_rom/CMakeFil
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_common/CMakeFiles/__idf_esp_common.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 31
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 30
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_common/CMakeFiles/__idf_esp_common.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_common/CMakeFiles/__idf_esp_common.dir/rule
@@ -6398,7 +6398,7 @@ esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/all: esp-idf/hal/CMakeFiles/__idf_h
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 31
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 30
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/rule
@@ -6430,7 +6430,7 @@ esp-idf/hal/CMakeFiles/__idf_hal.dir/all: esp-idf/log/CMakeFiles/__idf_log.dir/a
 
 # Build rule for subdir invocation for target.
 esp-idf/hal/CMakeFiles/__idf_hal.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 30
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/hal/CMakeFiles/__idf_hal.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/hal/CMakeFiles/__idf_hal.dir/rule
@@ -6457,12 +6457,12 @@ esp-idf/hal/CMakeFiles/__idf_hal.dir/clean:
 esp-idf/log/CMakeFiles/__idf_log.dir/all: esp-idf/heap/CMakeFiles/__idf_heap.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/log/CMakeFiles/__idf_log.dir/build.make esp-idf/log/CMakeFiles/__idf_log.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/log/CMakeFiles/__idf_log.dir/build.make esp-idf/log/CMakeFiles/__idf_log.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num=30 "Built target __idf_log"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num= "Built target __idf_log"
 .PHONY : esp-idf/log/CMakeFiles/__idf_log.dir/all
 
 # Build rule for subdir invocation for target.
 esp-idf/log/CMakeFiles/__idf_log.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 30
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/log/CMakeFiles/__idf_log.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/log/CMakeFiles/__idf_log.dir/rule
@@ -6474,7 +6474,7 @@ __idf_log: esp-idf/log/CMakeFiles/__idf_log.dir/rule
 # codegen rule for target.
 esp-idf/log/CMakeFiles/__idf_log.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f esp-idf/log/CMakeFiles/__idf_log.dir/build.make esp-idf/log/CMakeFiles/__idf_log.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num=30 "Finished codegen for target __idf_log"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num= "Finished codegen for target __idf_log"
 .PHONY : esp-idf/log/CMakeFiles/__idf_log.dir/codegen
 
 # clean rule for target.
@@ -6942,7 +6942,7 @@ esp-idf/esp_driver_gptimer/CMakeFiles/__idf_esp_driver_gptimer.dir/all: esp-idf/
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_driver_gptimer/CMakeFiles/__idf_esp_driver_gptimer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_gptimer/CMakeFiles/__idf_esp_driver_gptimer.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_driver_gptimer/CMakeFiles/__idf_esp_driver_gptimer.dir/rule
@@ -7294,7 +7294,7 @@ esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/all: esp-idf/xtensa/C
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/rule
@@ -7358,7 +7358,7 @@ esp-idf/unity/CMakeFiles/__idf_unity.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xt
 
 # Build rule for subdir invocation for target.
 esp-idf/unity/CMakeFiles/__idf_unity.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/unity/CMakeFiles/__idf_unity.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/unity/CMakeFiles/__idf_unity.dir/rule
@@ -7382,8 +7382,8 @@ esp-idf/unity/CMakeFiles/__idf_unity.dir/clean:
 # Target rules for target esp-idf/cmock/CMakeFiles/__idf_cmock.dir
 
 # All Build rule for target.
-esp-idf/cmock/CMakeFiles/__idf_cmock.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 esp-idf/cmock/CMakeFiles/__idf_cmock.dir/all: esp-idf/unity/CMakeFiles/__idf_unity.dir/all
+esp-idf/cmock/CMakeFiles/__idf_cmock.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/cmock/CMakeFiles/__idf_cmock.dir/build.make esp-idf/cmock/CMakeFiles/__idf_cmock.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/cmock/CMakeFiles/__idf_cmock.dir/build.make esp-idf/cmock/CMakeFiles/__idf_cmock.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num= "Built target __idf_cmock"
@@ -7391,7 +7391,7 @@ esp-idf/cmock/CMakeFiles/__idf_cmock.dir/all: esp-idf/unity/CMakeFiles/__idf_uni
 
 # Build rule for subdir invocation for target.
 esp-idf/cmock/CMakeFiles/__idf_cmock.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/cmock/CMakeFiles/__idf_cmock.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/cmock/CMakeFiles/__idf_cmock.dir/rule
@@ -7423,7 +7423,7 @@ esp-idf/console/CMakeFiles/__idf_console.dir/all: esp-idf/xtensa/CMakeFiles/__id
 
 # Build rule for subdir invocation for target.
 esp-idf/console/CMakeFiles/__idf_console.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 44
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/console/CMakeFiles/__idf_console.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/console/CMakeFiles/__idf_console.dir/rule
@@ -7487,7 +7487,7 @@ esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/all: esp-idf/xtensa/CMake
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/rule
@@ -7511,8 +7511,8 @@ esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/clean:
 # Target rules for target esp-idf/driver/CMakeFiles/__idf_driver.dir
 
 # All Build rule for target.
-esp-idf/driver/CMakeFiles/__idf_driver.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 esp-idf/driver/CMakeFiles/__idf_driver.dir/all: esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/all
+esp-idf/driver/CMakeFiles/__idf_driver.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/driver/CMakeFiles/__idf_driver.dir/build.make esp-idf/driver/CMakeFiles/__idf_driver.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/driver/CMakeFiles/__idf_driver.dir/build.make esp-idf/driver/CMakeFiles/__idf_driver.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num= "Built target __idf_driver"
@@ -7520,7 +7520,7 @@ esp-idf/driver/CMakeFiles/__idf_driver.dir/all: esp-idf/esp_hal_twai/CMakeFiles/
 
 # Build rule for subdir invocation for target.
 esp-idf/driver/CMakeFiles/__idf_driver.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/driver/CMakeFiles/__idf_driver.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/driver/CMakeFiles/__idf_driver.dir/rule
@@ -7680,7 +7680,7 @@ esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/all: esp-idf/xtensa/C
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/rule
@@ -7712,7 +7712,7 @@ esp-idf/esp_driver_dac/CMakeFiles/__idf_esp_driver_dac.dir/all: esp-idf/xtensa/C
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_driver_dac/CMakeFiles/__idf_esp_driver_dac.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 44
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_dac/CMakeFiles/__idf_esp_driver_dac.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_driver_dac/CMakeFiles/__idf_esp_driver_dac.dir/rule
@@ -7744,7 +7744,7 @@ esp-idf/esp_driver_i2c/CMakeFiles/__idf_esp_driver_i2c.dir/all: esp-idf/xtensa/C
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_driver_i2c/CMakeFiles/__idf_esp_driver_i2c.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 44
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_i2c/CMakeFiles/__idf_esp_driver_i2c.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_driver_i2c/CMakeFiles/__idf_esp_driver_i2c.dir/rule
@@ -7776,7 +7776,7 @@ esp-idf/esp_hal_ledc/CMakeFiles/__idf_esp_hal_ledc.dir/all: esp-idf/xtensa/CMake
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_hal_ledc/CMakeFiles/__idf_esp_hal_ledc.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 44
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_ledc/CMakeFiles/__idf_esp_hal_ledc.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_hal_ledc/CMakeFiles/__idf_esp_hal_ledc.dir/rule
@@ -7800,8 +7800,8 @@ esp-idf/esp_hal_ledc/CMakeFiles/__idf_esp_hal_ledc.dir/clean:
 # Target rules for target esp-idf/esp_driver_ledc/CMakeFiles/__idf_esp_driver_ledc.dir
 
 # All Build rule for target.
-esp-idf/esp_driver_ledc/CMakeFiles/__idf_esp_driver_ledc.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 esp-idf/esp_driver_ledc/CMakeFiles/__idf_esp_driver_ledc.dir/all: esp-idf/esp_hal_ledc/CMakeFiles/__idf_esp_hal_ledc.dir/all
+esp-idf/esp_driver_ledc/CMakeFiles/__idf_esp_driver_ledc.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_ledc/CMakeFiles/__idf_esp_driver_ledc.dir/build.make esp-idf/esp_driver_ledc/CMakeFiles/__idf_esp_driver_ledc.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_ledc/CMakeFiles/__idf_esp_driver_ledc.dir/build.make esp-idf/esp_driver_ledc/CMakeFiles/__idf_esp_driver_ledc.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num= "Built target __idf_esp_driver_ledc"
@@ -7809,7 +7809,7 @@ esp-idf/esp_driver_ledc/CMakeFiles/__idf_esp_driver_ledc.dir/all: esp-idf/esp_ha
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_driver_ledc/CMakeFiles/__idf_esp_driver_ledc.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 44
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_ledc/CMakeFiles/__idf_esp_driver_ledc.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_driver_ledc/CMakeFiles/__idf_esp_driver_ledc.dir/rule
@@ -7841,7 +7841,7 @@ esp-idf/esp_hal_mcpwm/CMakeFiles/__idf_esp_hal_mcpwm.dir/all: esp-idf/xtensa/CMa
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_hal_mcpwm/CMakeFiles/__idf_esp_hal_mcpwm.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_mcpwm/CMakeFiles/__idf_esp_hal_mcpwm.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_hal_mcpwm/CMakeFiles/__idf_esp_hal_mcpwm.dir/rule
@@ -7865,8 +7865,8 @@ esp-idf/esp_hal_mcpwm/CMakeFiles/__idf_esp_hal_mcpwm.dir/clean:
 # Target rules for target esp-idf/esp_driver_mcpwm/CMakeFiles/__idf_esp_driver_mcpwm.dir
 
 # All Build rule for target.
-esp-idf/esp_driver_mcpwm/CMakeFiles/__idf_esp_driver_mcpwm.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 esp-idf/esp_driver_mcpwm/CMakeFiles/__idf_esp_driver_mcpwm.dir/all: esp-idf/esp_hal_mcpwm/CMakeFiles/__idf_esp_hal_mcpwm.dir/all
+esp-idf/esp_driver_mcpwm/CMakeFiles/__idf_esp_driver_mcpwm.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_mcpwm/CMakeFiles/__idf_esp_driver_mcpwm.dir/build.make esp-idf/esp_driver_mcpwm/CMakeFiles/__idf_esp_driver_mcpwm.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_mcpwm/CMakeFiles/__idf_esp_driver_mcpwm.dir/build.make esp-idf/esp_driver_mcpwm/CMakeFiles/__idf_esp_driver_mcpwm.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num= "Built target __idf_esp_driver_mcpwm"
@@ -7874,7 +7874,7 @@ esp-idf/esp_driver_mcpwm/CMakeFiles/__idf_esp_driver_mcpwm.dir/all: esp-idf/esp_
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_driver_mcpwm/CMakeFiles/__idf_esp_driver_mcpwm.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_mcpwm/CMakeFiles/__idf_esp_driver_mcpwm.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_driver_mcpwm/CMakeFiles/__idf_esp_driver_mcpwm.dir/rule
@@ -7906,7 +7906,7 @@ esp-idf/esp_hal_pcnt/CMakeFiles/__idf_esp_hal_pcnt.dir/all: esp-idf/xtensa/CMake
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_hal_pcnt/CMakeFiles/__idf_esp_hal_pcnt.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_pcnt/CMakeFiles/__idf_esp_hal_pcnt.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_hal_pcnt/CMakeFiles/__idf_esp_hal_pcnt.dir/rule
@@ -7930,8 +7930,8 @@ esp-idf/esp_hal_pcnt/CMakeFiles/__idf_esp_hal_pcnt.dir/clean:
 # Target rules for target esp-idf/esp_driver_pcnt/CMakeFiles/__idf_esp_driver_pcnt.dir
 
 # All Build rule for target.
-esp-idf/esp_driver_pcnt/CMakeFiles/__idf_esp_driver_pcnt.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 esp-idf/esp_driver_pcnt/CMakeFiles/__idf_esp_driver_pcnt.dir/all: esp-idf/esp_hal_pcnt/CMakeFiles/__idf_esp_hal_pcnt.dir/all
+esp-idf/esp_driver_pcnt/CMakeFiles/__idf_esp_driver_pcnt.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_pcnt/CMakeFiles/__idf_esp_driver_pcnt.dir/build.make esp-idf/esp_driver_pcnt/CMakeFiles/__idf_esp_driver_pcnt.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_pcnt/CMakeFiles/__idf_esp_driver_pcnt.dir/build.make esp-idf/esp_driver_pcnt/CMakeFiles/__idf_esp_driver_pcnt.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num=7 "Built target __idf_esp_driver_pcnt"
@@ -7939,7 +7939,7 @@ esp-idf/esp_driver_pcnt/CMakeFiles/__idf_esp_driver_pcnt.dir/all: esp-idf/esp_ha
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_driver_pcnt/CMakeFiles/__idf_esp_driver_pcnt.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 44
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_pcnt/CMakeFiles/__idf_esp_driver_pcnt.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_driver_pcnt/CMakeFiles/__idf_esp_driver_pcnt.dir/rule
@@ -7971,7 +7971,7 @@ esp-idf/esp_hal_rmt/CMakeFiles/__idf_esp_hal_rmt.dir/all: esp-idf/xtensa/CMakeFi
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_hal_rmt/CMakeFiles/__idf_esp_hal_rmt.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 44
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_rmt/CMakeFiles/__idf_esp_hal_rmt.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_hal_rmt/CMakeFiles/__idf_esp_hal_rmt.dir/rule
@@ -7995,8 +7995,8 @@ esp-idf/esp_hal_rmt/CMakeFiles/__idf_esp_hal_rmt.dir/clean:
 # Target rules for target esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir
 
 # All Build rule for target.
-esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/all: esp-idf/esp_hal_rmt/CMakeFiles/__idf_esp_hal_rmt.dir/all
+esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/build.make esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/build.make esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num= "Built target __idf_esp_driver_rmt"
@@ -8004,7 +8004,7 @@ esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/all: esp-idf/esp_hal_
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 44
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_driver_rmt/CMakeFiles/__idf_esp_driver_rmt.dir/rule
@@ -8036,7 +8036,7 @@ esp-idf/esp_hal_sd/CMakeFiles/__idf_esp_hal_sd.dir/all: esp-idf/xtensa/CMakeFile
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_hal_sd/CMakeFiles/__idf_esp_hal_sd.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_sd/CMakeFiles/__idf_esp_hal_sd.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_hal_sd/CMakeFiles/__idf_esp_hal_sd.dir/rule
@@ -8060,8 +8060,8 @@ esp-idf/esp_hal_sd/CMakeFiles/__idf_esp_hal_sd.dir/clean:
 # Target rules for target esp-idf/sdmmc/CMakeFiles/__idf_sdmmc.dir
 
 # All Build rule for target.
-esp-idf/sdmmc/CMakeFiles/__idf_sdmmc.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 esp-idf/sdmmc/CMakeFiles/__idf_sdmmc.dir/all: esp-idf/esp_hal_sd/CMakeFiles/__idf_esp_hal_sd.dir/all
+esp-idf/sdmmc/CMakeFiles/__idf_sdmmc.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/sdmmc/CMakeFiles/__idf_sdmmc.dir/build.make esp-idf/sdmmc/CMakeFiles/__idf_sdmmc.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/sdmmc/CMakeFiles/__idf_sdmmc.dir/build.make esp-idf/sdmmc/CMakeFiles/__idf_sdmmc.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num=82 "Built target __idf_sdmmc"
@@ -8069,7 +8069,7 @@ esp-idf/sdmmc/CMakeFiles/__idf_sdmmc.dir/all: esp-idf/esp_hal_sd/CMakeFiles/__id
 
 # Build rule for subdir invocation for target.
 esp-idf/sdmmc/CMakeFiles/__idf_sdmmc.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 44
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/sdmmc/CMakeFiles/__idf_sdmmc.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/sdmmc/CMakeFiles/__idf_sdmmc.dir/rule
@@ -8093,9 +8093,9 @@ esp-idf/sdmmc/CMakeFiles/__idf_sdmmc.dir/clean:
 # Target rules for target esp-idf/esp_driver_sd_intf/CMakeFiles/__idf_esp_driver_sd_intf.dir
 
 # All Build rule for target.
-esp-idf/esp_driver_sd_intf/CMakeFiles/__idf_esp_driver_sd_intf.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 esp-idf/esp_driver_sd_intf/CMakeFiles/__idf_esp_driver_sd_intf.dir/all: esp-idf/esp_hal_sd/CMakeFiles/__idf_esp_hal_sd.dir/all
 esp-idf/esp_driver_sd_intf/CMakeFiles/__idf_esp_driver_sd_intf.dir/all: esp-idf/sdmmc/CMakeFiles/__idf_sdmmc.dir/all
+esp-idf/esp_driver_sd_intf/CMakeFiles/__idf_esp_driver_sd_intf.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_sd_intf/CMakeFiles/__idf_esp_driver_sd_intf.dir/build.make esp-idf/esp_driver_sd_intf/CMakeFiles/__idf_esp_driver_sd_intf.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_sd_intf/CMakeFiles/__idf_esp_driver_sd_intf.dir/build.make esp-idf/esp_driver_sd_intf/CMakeFiles/__idf_esp_driver_sd_intf.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num= "Built target __idf_esp_driver_sd_intf"
@@ -8103,7 +8103,7 @@ esp-idf/esp_driver_sd_intf/CMakeFiles/__idf_esp_driver_sd_intf.dir/all: esp-idf/
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_driver_sd_intf/CMakeFiles/__idf_esp_driver_sd_intf.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 44
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_sd_intf/CMakeFiles/__idf_esp_driver_sd_intf.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_driver_sd_intf/CMakeFiles/__idf_esp_driver_sd_intf.dir/rule
@@ -8127,8 +8127,8 @@ esp-idf/esp_driver_sd_intf/CMakeFiles/__idf_esp_driver_sd_intf.dir/clean:
 # Target rules for target esp-idf/esp_driver_sdio/CMakeFiles/__idf_esp_driver_sdio.dir
 
 # All Build rule for target.
-esp-idf/esp_driver_sdio/CMakeFiles/__idf_esp_driver_sdio.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 esp-idf/esp_driver_sdio/CMakeFiles/__idf_esp_driver_sdio.dir/all: esp-idf/esp_hal_sd/CMakeFiles/__idf_esp_hal_sd.dir/all
+esp-idf/esp_driver_sdio/CMakeFiles/__idf_esp_driver_sdio.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_sdio/CMakeFiles/__idf_esp_driver_sdio.dir/build.make esp-idf/esp_driver_sdio/CMakeFiles/__idf_esp_driver_sdio.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_sdio/CMakeFiles/__idf_esp_driver_sdio.dir/build.make esp-idf/esp_driver_sdio/CMakeFiles/__idf_esp_driver_sdio.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num= "Built target __idf_esp_driver_sdio"
@@ -8136,7 +8136,7 @@ esp-idf/esp_driver_sdio/CMakeFiles/__idf_esp_driver_sdio.dir/all: esp-idf/esp_ha
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_driver_sdio/CMakeFiles/__idf_esp_driver_sdio.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_sdio/CMakeFiles/__idf_esp_driver_sdio.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_driver_sdio/CMakeFiles/__idf_esp_driver_sdio.dir/rule
@@ -8168,7 +8168,7 @@ esp-idf/esp_driver_sdm/CMakeFiles/__idf_esp_driver_sdm.dir/all: esp-idf/xtensa/C
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_driver_sdm/CMakeFiles/__idf_esp_driver_sdm.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_sdm/CMakeFiles/__idf_esp_driver_sdm.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_driver_sdm/CMakeFiles/__idf_esp_driver_sdm.dir/rule
@@ -8192,10 +8192,10 @@ esp-idf/esp_driver_sdm/CMakeFiles/__idf_esp_driver_sdm.dir/clean:
 # Target rules for target esp-idf/esp_driver_sdmmc/CMakeFiles/__idf_esp_driver_sdmmc.dir
 
 # All Build rule for target.
-esp-idf/esp_driver_sdmmc/CMakeFiles/__idf_esp_driver_sdmmc.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 esp-idf/esp_driver_sdmmc/CMakeFiles/__idf_esp_driver_sdmmc.dir/all: esp-idf/esp_hal_sd/CMakeFiles/__idf_esp_hal_sd.dir/all
 esp-idf/esp_driver_sdmmc/CMakeFiles/__idf_esp_driver_sdmmc.dir/all: esp-idf/sdmmc/CMakeFiles/__idf_sdmmc.dir/all
 esp-idf/esp_driver_sdmmc/CMakeFiles/__idf_esp_driver_sdmmc.dir/all: esp-idf/esp_driver_sd_intf/CMakeFiles/__idf_esp_driver_sd_intf.dir/all
+esp-idf/esp_driver_sdmmc/CMakeFiles/__idf_esp_driver_sdmmc.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_sdmmc/CMakeFiles/__idf_esp_driver_sdmmc.dir/build.make esp-idf/esp_driver_sdmmc/CMakeFiles/__idf_esp_driver_sdmmc.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_sdmmc/CMakeFiles/__idf_esp_driver_sdmmc.dir/build.make esp-idf/esp_driver_sdmmc/CMakeFiles/__idf_esp_driver_sdmmc.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num=8 "Built target __idf_esp_driver_sdmmc"
@@ -8203,7 +8203,7 @@ esp-idf/esp_driver_sdmmc/CMakeFiles/__idf_esp_driver_sdmmc.dir/all: esp-idf/esp_
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_driver_sdmmc/CMakeFiles/__idf_esp_driver_sdmmc.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 45
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 44
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_sdmmc/CMakeFiles/__idf_esp_driver_sdmmc.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_driver_sdmmc/CMakeFiles/__idf_esp_driver_sdmmc.dir/rule
@@ -8227,10 +8227,10 @@ esp-idf/esp_driver_sdmmc/CMakeFiles/__idf_esp_driver_sdmmc.dir/clean:
 # Target rules for target esp-idf/esp_driver_sdspi/CMakeFiles/__idf_esp_driver_sdspi.dir
 
 # All Build rule for target.
-esp-idf/esp_driver_sdspi/CMakeFiles/__idf_esp_driver_sdspi.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 esp-idf/esp_driver_sdspi/CMakeFiles/__idf_esp_driver_sdspi.dir/all: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/all
 esp-idf/esp_driver_sdspi/CMakeFiles/__idf_esp_driver_sdspi.dir/all: esp-idf/esp_hal_sd/CMakeFiles/__idf_esp_hal_sd.dir/all
 esp-idf/esp_driver_sdspi/CMakeFiles/__idf_esp_driver_sdspi.dir/all: esp-idf/sdmmc/CMakeFiles/__idf_sdmmc.dir/all
+esp-idf/esp_driver_sdspi/CMakeFiles/__idf_esp_driver_sdspi.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_sdspi/CMakeFiles/__idf_esp_driver_sdspi.dir/build.make esp-idf/esp_driver_sdspi/CMakeFiles/__idf_esp_driver_sdspi.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_sdspi/CMakeFiles/__idf_esp_driver_sdspi.dir/build.make esp-idf/esp_driver_sdspi/CMakeFiles/__idf_esp_driver_sdspi.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num= "Built target __idf_esp_driver_sdspi"
@@ -8238,7 +8238,7 @@ esp-idf/esp_driver_sdspi/CMakeFiles/__idf_esp_driver_sdspi.dir/all: esp-idf/sdmm
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_driver_sdspi/CMakeFiles/__idf_esp_driver_sdspi.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 44
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_sdspi/CMakeFiles/__idf_esp_driver_sdspi.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_driver_sdspi/CMakeFiles/__idf_esp_driver_sdspi.dir/rule
@@ -8270,7 +8270,7 @@ esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/all: es
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/rule
@@ -8294,8 +8294,8 @@ esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/clean:
 # Target rules for target esp-idf/esp_driver_twai/CMakeFiles/__idf_esp_driver_twai.dir
 
 # All Build rule for target.
-esp-idf/esp_driver_twai/CMakeFiles/__idf_esp_driver_twai.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 esp-idf/esp_driver_twai/CMakeFiles/__idf_esp_driver_twai.dir/all: esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/all
+esp-idf/esp_driver_twai/CMakeFiles/__idf_esp_driver_twai.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_twai/CMakeFiles/__idf_esp_driver_twai.dir/build.make esp-idf/esp_driver_twai/CMakeFiles/__idf_esp_driver_twai.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_driver_twai/CMakeFiles/__idf_esp_driver_twai.dir/build.make esp-idf/esp_driver_twai/CMakeFiles/__idf_esp_driver_twai.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num= "Built target __idf_esp_driver_twai"
@@ -8303,7 +8303,7 @@ esp-idf/esp_driver_twai/CMakeFiles/__idf_esp_driver_twai.dir/all: esp-idf/esp_ha
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_driver_twai/CMakeFiles/__idf_esp_driver_twai.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_driver_twai/CMakeFiles/__idf_esp_driver_twai.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_driver_twai/CMakeFiles/__idf_esp_driver_twai.dir/rule
@@ -8335,7 +8335,7 @@ esp-idf/esp_hal_emac/CMakeFiles/__idf_esp_hal_emac.dir/all: esp-idf/xtensa/CMake
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_hal_emac/CMakeFiles/__idf_esp_hal_emac.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_emac/CMakeFiles/__idf_esp_hal_emac.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_hal_emac/CMakeFiles/__idf_esp_hal_emac.dir/rule
@@ -8359,9 +8359,9 @@ esp-idf/esp_hal_emac/CMakeFiles/__idf_esp_hal_emac.dir/clean:
 # Target rules for target esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir
 
 # All Build rule for target.
-esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/all: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/all
 esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/all: esp-idf/esp_hal_emac/CMakeFiles/__idf_esp_hal_emac.dir/all
+esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/build.make esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/build.make esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num= "Built target __idf_esp_eth"
@@ -8369,7 +8369,7 @@ esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/all: esp-idf/esp_hal_emac/CMakeFile
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/rule
@@ -8401,7 +8401,7 @@ esp-idf/esp_hal_lcd/CMakeFiles/__idf_esp_hal_lcd.dir/all: esp-idf/xtensa/CMakeFi
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_hal_lcd/CMakeFiles/__idf_esp_hal_lcd.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hal_lcd/CMakeFiles/__idf_esp_hal_lcd.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_hal_lcd/CMakeFiles/__idf_esp_hal_lcd.dir/rule
@@ -8433,7 +8433,7 @@ esp-idf/esp_hid/CMakeFiles/__idf_esp_hid.dir/all: esp-idf/xtensa/CMakeFiles/__id
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_hid/CMakeFiles/__idf_esp_hid.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_hid/CMakeFiles/__idf_esp_hid.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_hid/CMakeFiles/__idf_esp_hid.dir/rule
@@ -8595,7 +8595,7 @@ esp-idf/esp_https_server/CMakeFiles/__idf_esp_https_server.dir/all: esp-idf/xten
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_https_server/CMakeFiles/__idf_esp_https_server.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_https_server/CMakeFiles/__idf_esp_https_server.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_https_server/CMakeFiles/__idf_esp_https_server.dir/rule
@@ -8619,10 +8619,10 @@ esp-idf/esp_https_server/CMakeFiles/__idf_esp_https_server.dir/clean:
 # Target rules for target esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir
 
 # All Build rule for target.
-esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/all: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/all
 esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/all: esp-idf/esp_driver_i2c/CMakeFiles/__idf_esp_driver_i2c.dir/all
 esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/all: esp-idf/esp_hal_lcd/CMakeFiles/__idf_esp_hal_lcd.dir/all
+esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/build.make esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/build.make esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num= "Built target __idf_esp_lcd"
@@ -8630,7 +8630,7 @@ esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/all: esp-idf/esp_hal_lcd/CMakeFiles
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 44
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/rule
@@ -8662,7 +8662,7 @@ esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/all: esp-idf/xtensa/CMakeFile
 
 # Build rule for subdir invocation for target.
 esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/rule
@@ -8686,9 +8686,9 @@ esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/clean:
 # Target rules for target esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir
 
 # All Build rule for target.
-esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all: esp-idf/console/CMakeFiles/__idf_console.dir/all
 esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all: esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/all
+esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/build.make esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/build.make esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num=81 "Built target __idf_protocomm"
@@ -8696,7 +8696,7 @@ esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all: esp-idf/protobuf-c/CMakeFi
 
 # Build rule for subdir invocation for target.
 esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 45
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 44
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/rule
@@ -8720,11 +8720,11 @@ esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/clean:
 # Target rules for target esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir
 
 # All Build rule for target.
-esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all: esp-idf/console/CMakeFiles/__idf_console.dir/all
 esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all: esp-idf/esp_https_server/CMakeFiles/__idf_esp_https_server.dir/all
 esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all: esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/all
 esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all: esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all
+esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/build.make esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/build.make esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num= "Built target __idf_esp_local_ctrl"
@@ -8732,7 +8732,7 @@ esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all: esp-idf/protocom
 
 # Build rule for subdir invocation for target.
 esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 45
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 44
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/rule
@@ -8764,7 +8764,7 @@ esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/all: esp-idf/xtensa/C
 
 # Build rule for subdir invocation for target.
 esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/rule
@@ -8788,7 +8788,6 @@ esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/clean:
 # Target rules for target esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir
 
 # All Build rule for target.
-esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/all: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/all
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/all: esp-idf/esp_hal_sd/CMakeFiles/__idf_esp_hal_sd.dir/all
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/all: esp-idf/sdmmc/CMakeFiles/__idf_sdmmc.dir/all
@@ -8796,6 +8795,7 @@ esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/all: esp-idf/esp_driver_sd_intf/CMakeFi
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/all: esp-idf/esp_driver_sdmmc/CMakeFiles/__idf_esp_driver_sdmmc.dir/all
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/all: esp-idf/esp_driver_sdspi/CMakeFiles/__idf_esp_driver_sdspi.dir/all
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/all: esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/all
+esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/build.make esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/build.make esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num=27 "Built target __idf_fatfs"
@@ -8803,7 +8803,7 @@ esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/all: esp-idf/wear_levelling/CMakeFiles/
 
 # Build rule for subdir invocation for target.
 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 46
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 45
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/rule
@@ -8835,7 +8835,7 @@ esp-idf/perfmon/CMakeFiles/__idf_perfmon.dir/all: esp-idf/xtensa/CMakeFiles/__id
 
 # Build rule for subdir invocation for target.
 esp-idf/perfmon/CMakeFiles/__idf_perfmon.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/perfmon/CMakeFiles/__idf_perfmon.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/perfmon/CMakeFiles/__idf_perfmon.dir/rule
@@ -8867,7 +8867,7 @@ esp-idf/rt/CMakeFiles/__idf_rt.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.d
 
 # Build rule for subdir invocation for target.
 esp-idf/rt/CMakeFiles/__idf_rt.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/rt/CMakeFiles/__idf_rt.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/rt/CMakeFiles/__idf_rt.dir/rule
@@ -8899,7 +8899,7 @@ esp-idf/spiffs/CMakeFiles/__idf_spiffs.dir/all: esp-idf/xtensa/CMakeFiles/__idf_
 
 # Build rule for subdir invocation for target.
 esp-idf/spiffs/CMakeFiles/__idf_spiffs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 44
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/spiffs/CMakeFiles/__idf_spiffs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/spiffs/CMakeFiles/__idf_spiffs.dir/rule
@@ -8926,7 +8926,7 @@ esp-idf/spiffs/CMakeFiles/__idf_spiffs.dir/clean:
 esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/build.make esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/build.make esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num=31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73 "Built target __idf_lvgl__lvgl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num=30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73 "Built target __idf_lvgl__lvgl"
 .PHONY : esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/all
 
 # Build rule for subdir invocation for target.
@@ -8943,7 +8943,7 @@ __idf_lvgl__lvgl: esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/rule
 # codegen rule for target.
 esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/build.make esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num=31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73 "Finished codegen for target __idf_lvgl__lvgl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num=30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73 "Finished codegen for target __idf_lvgl__lvgl"
 .PHONY : esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/codegen
 
 # clean rule for target.
@@ -8955,12 +8955,12 @@ esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/clean:
 # Target rules for target esp-idf/espressif__esp_lvgl_port/CMakeFiles/lvgl_port_lib.dir
 
 # All Build rule for target.
-esp-idf/espressif__esp_lvgl_port/CMakeFiles/lvgl_port_lib.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 esp-idf/espressif__esp_lvgl_port/CMakeFiles/lvgl_port_lib.dir/all: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/all
 esp-idf/espressif__esp_lvgl_port/CMakeFiles/lvgl_port_lib.dir/all: esp-idf/esp_driver_i2c/CMakeFiles/__idf_esp_driver_i2c.dir/all
 esp-idf/espressif__esp_lvgl_port/CMakeFiles/lvgl_port_lib.dir/all: esp-idf/esp_hal_lcd/CMakeFiles/__idf_esp_hal_lcd.dir/all
 esp-idf/espressif__esp_lvgl_port/CMakeFiles/lvgl_port_lib.dir/all: esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/all
 esp-idf/espressif__esp_lvgl_port/CMakeFiles/lvgl_port_lib.dir/all: esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/all
+esp-idf/espressif__esp_lvgl_port/CMakeFiles/lvgl_port_lib.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/espressif__esp_lvgl_port/CMakeFiles/lvgl_port_lib.dir/build.make esp-idf/espressif__esp_lvgl_port/CMakeFiles/lvgl_port_lib.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/espressif__esp_lvgl_port/CMakeFiles/lvgl_port_lib.dir/build.make esp-idf/espressif__esp_lvgl_port/CMakeFiles/lvgl_port_lib.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num= "Built target lvgl_port_lib"
@@ -8992,10 +8992,10 @@ esp-idf/espressif__esp_lvgl_port/CMakeFiles/lvgl_port_lib.dir/clean:
 # Target rules for target esp-idf/espressif__lan87xx/CMakeFiles/__idf_espressif__lan87xx.dir
 
 # All Build rule for target.
-esp-idf/espressif__lan87xx/CMakeFiles/__idf_espressif__lan87xx.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 esp-idf/espressif__lan87xx/CMakeFiles/__idf_espressif__lan87xx.dir/all: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/all
 esp-idf/espressif__lan87xx/CMakeFiles/__idf_espressif__lan87xx.dir/all: esp-idf/esp_hal_emac/CMakeFiles/__idf_esp_hal_emac.dir/all
 esp-idf/espressif__lan87xx/CMakeFiles/__idf_espressif__lan87xx.dir/all: esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/all
+esp-idf/espressif__lan87xx/CMakeFiles/__idf_espressif__lan87xx.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/espressif__lan87xx/CMakeFiles/__idf_espressif__lan87xx.dir/build.make esp-idf/espressif__lan87xx/CMakeFiles/__idf_espressif__lan87xx.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/espressif__lan87xx/CMakeFiles/__idf_espressif__lan87xx.dir/build.make esp-idf/espressif__lan87xx/CMakeFiles/__idf_espressif__lan87xx.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num= "Built target __idf_espressif__lan87xx"
@@ -9003,7 +9003,7 @@ esp-idf/espressif__lan87xx/CMakeFiles/__idf_espressif__lan87xx.dir/all: esp-idf/
 
 # Build rule for subdir invocation for target.
 esp-idf/espressif__lan87xx/CMakeFiles/__idf_espressif__lan87xx.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 42
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/espressif__lan87xx/CMakeFiles/__idf_espressif__lan87xx.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles 0
 .PHONY : esp-idf/espressif__lan87xx/CMakeFiles/__idf_espressif__lan87xx.dir/rule
@@ -9027,7 +9027,6 @@ esp-idf/espressif__lan87xx/CMakeFiles/__idf_espressif__lan87xx.dir/clean:
 # Target rules for target esp-idf/main/CMakeFiles/__idf_main.dir
 
 # All Build rule for target.
-esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_driver_gptimer/CMakeFiles/__idf_esp_driver_gptimer.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/unity/CMakeFiles/__idf_unity.dir/all
@@ -9035,6 +9034,8 @@ esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/cmock/CMakeFiles/__idf_cmock
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/console/CMakeFiles/__idf_console.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/driver/CMakeFiles/__idf_driver.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_driver_dac/CMakeFiles/__idf_esp_driver_dac.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_driver_i2c/CMakeFiles/__idf_esp_driver_i2c.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_hal_ledc/CMakeFiles/__idf_esp_hal_ledc.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_driver_ledc/CMakeFiles/__idf_esp_driver_ledc.dir/all
@@ -9070,8 +9071,7 @@ esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/spiffs/CMakeFiles/__idf_spif
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/espressif__esp_lvgl_port/CMakeFiles/lvgl_port_lib.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/espressif__lan87xx/CMakeFiles/__idf_espressif__lan87xx.dir/all
-esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/all
-esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_driver_dac/CMakeFiles/__idf_esp_driver_dac.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num= "Built target __idf_main"

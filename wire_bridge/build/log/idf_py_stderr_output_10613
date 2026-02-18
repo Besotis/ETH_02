@@ -1,0 +1,6 @@
+Command: make -j 6 all
+Error: app partition is too small for binary wire_bridge.bin size 0x10f950:
+  - Part 'factory' 0/0 @ 0x10000 size 0x100000 (overflow 0xf950)
+make[2]: *** [CMakeFiles/app_check_size] Error 1
+make[1]: *** [CMakeFiles/app_check_size.dir/all] Error 2
+make: *** [all] Error 2

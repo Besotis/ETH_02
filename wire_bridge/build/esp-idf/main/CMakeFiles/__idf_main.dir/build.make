@@ -100,19 +100,67 @@ esp-idf/main/CMakeFiles/__idf_main.dir/display_status.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/__idf_main.dir/display_status.c.s"
 	cd /Users/macbookair/esp/ETH_02/wire_bridge/build/esp-idf/main && /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/macbookair/esp/ETH_02/wire_bridge/main/display_status.c -o CMakeFiles/__idf_main.dir/display_status.c.s
 
+esp-idf/main/CMakeFiles/__idf_main.dir/bridge_wifi.c.obj: esp-idf/main/CMakeFiles/__idf_main.dir/flags.make
+esp-idf/main/CMakeFiles/__idf_main.dir/bridge_wifi.c.obj: /Users/macbookair/esp/ETH_02/wire_bridge/main/bridge_wifi.c
+esp-idf/main/CMakeFiles/__idf_main.dir/bridge_wifi.c.obj: esp-idf/main/CMakeFiles/__idf_main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object esp-idf/main/CMakeFiles/__idf_main.dir/bridge_wifi.c.obj"
+	cd /Users/macbookair/esp/ETH_02/wire_bridge/build/esp-idf/main && /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/bridge_wifi.c.obj -MF CMakeFiles/__idf_main.dir/bridge_wifi.c.obj.d -o CMakeFiles/__idf_main.dir/bridge_wifi.c.obj -c /Users/macbookair/esp/ETH_02/wire_bridge/main/bridge_wifi.c
+
+esp-idf/main/CMakeFiles/__idf_main.dir/bridge_wifi.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/__idf_main.dir/bridge_wifi.c.i"
+	cd /Users/macbookair/esp/ETH_02/wire_bridge/build/esp-idf/main && /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/macbookair/esp/ETH_02/wire_bridge/main/bridge_wifi.c > CMakeFiles/__idf_main.dir/bridge_wifi.c.i
+
+esp-idf/main/CMakeFiles/__idf_main.dir/bridge_wifi.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/__idf_main.dir/bridge_wifi.c.s"
+	cd /Users/macbookair/esp/ETH_02/wire_bridge/build/esp-idf/main && /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/macbookair/esp/ETH_02/wire_bridge/main/bridge_wifi.c -o CMakeFiles/__idf_main.dir/bridge_wifi.c.s
+
+esp-idf/main/CMakeFiles/__idf_main.dir/udp_tunnel.c.obj: esp-idf/main/CMakeFiles/__idf_main.dir/flags.make
+esp-idf/main/CMakeFiles/__idf_main.dir/udp_tunnel.c.obj: /Users/macbookair/esp/ETH_02/wire_bridge/main/udp_tunnel.c
+esp-idf/main/CMakeFiles/__idf_main.dir/udp_tunnel.c.obj: esp-idf/main/CMakeFiles/__idf_main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object esp-idf/main/CMakeFiles/__idf_main.dir/udp_tunnel.c.obj"
+	cd /Users/macbookair/esp/ETH_02/wire_bridge/build/esp-idf/main && /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/udp_tunnel.c.obj -MF CMakeFiles/__idf_main.dir/udp_tunnel.c.obj.d -o CMakeFiles/__idf_main.dir/udp_tunnel.c.obj -c /Users/macbookair/esp/ETH_02/wire_bridge/main/udp_tunnel.c
+
+esp-idf/main/CMakeFiles/__idf_main.dir/udp_tunnel.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/__idf_main.dir/udp_tunnel.c.i"
+	cd /Users/macbookair/esp/ETH_02/wire_bridge/build/esp-idf/main && /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/macbookair/esp/ETH_02/wire_bridge/main/udp_tunnel.c > CMakeFiles/__idf_main.dir/udp_tunnel.c.i
+
+esp-idf/main/CMakeFiles/__idf_main.dir/udp_tunnel.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/__idf_main.dir/udp_tunnel.c.s"
+	cd /Users/macbookair/esp/ETH_02/wire_bridge/build/esp-idf/main && /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/macbookair/esp/ETH_02/wire_bridge/main/udp_tunnel.c -o CMakeFiles/__idf_main.dir/udp_tunnel.c.s
+
+esp-idf/main/CMakeFiles/__idf_main.dir/eth_tap.c.obj: esp-idf/main/CMakeFiles/__idf_main.dir/flags.make
+esp-idf/main/CMakeFiles/__idf_main.dir/eth_tap.c.obj: /Users/macbookair/esp/ETH_02/wire_bridge/main/eth_tap.c
+esp-idf/main/CMakeFiles/__idf_main.dir/eth_tap.c.obj: esp-idf/main/CMakeFiles/__idf_main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object esp-idf/main/CMakeFiles/__idf_main.dir/eth_tap.c.obj"
+	cd /Users/macbookair/esp/ETH_02/wire_bridge/build/esp-idf/main && /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/eth_tap.c.obj -MF CMakeFiles/__idf_main.dir/eth_tap.c.obj.d -o CMakeFiles/__idf_main.dir/eth_tap.c.obj -c /Users/macbookair/esp/ETH_02/wire_bridge/main/eth_tap.c
+
+esp-idf/main/CMakeFiles/__idf_main.dir/eth_tap.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/__idf_main.dir/eth_tap.c.i"
+	cd /Users/macbookair/esp/ETH_02/wire_bridge/build/esp-idf/main && /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/macbookair/esp/ETH_02/wire_bridge/main/eth_tap.c > CMakeFiles/__idf_main.dir/eth_tap.c.i
+
+esp-idf/main/CMakeFiles/__idf_main.dir/eth_tap.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/__idf_main.dir/eth_tap.c.s"
+	cd /Users/macbookair/esp/ETH_02/wire_bridge/build/esp-idf/main && /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/macbookair/esp/ETH_02/wire_bridge/main/eth_tap.c -o CMakeFiles/__idf_main.dir/eth_tap.c.s
+
 # Object files for target __idf_main
 __idf_main_OBJECTS = \
 "CMakeFiles/__idf_main.dir/wire_bridge.c.obj" \
-"CMakeFiles/__idf_main.dir/display_status.c.obj"
+"CMakeFiles/__idf_main.dir/display_status.c.obj" \
+"CMakeFiles/__idf_main.dir/bridge_wifi.c.obj" \
+"CMakeFiles/__idf_main.dir/udp_tunnel.c.obj" \
+"CMakeFiles/__idf_main.dir/eth_tap.c.obj"
 
 # External object files for target __idf_main
 __idf_main_EXTERNAL_OBJECTS =
 
 esp-idf/main/libmain.a: esp-idf/main/CMakeFiles/__idf_main.dir/wire_bridge.c.obj
 esp-idf/main/libmain.a: esp-idf/main/CMakeFiles/__idf_main.dir/display_status.c.obj
+esp-idf/main/libmain.a: esp-idf/main/CMakeFiles/__idf_main.dir/bridge_wifi.c.obj
+esp-idf/main/libmain.a: esp-idf/main/CMakeFiles/__idf_main.dir/udp_tunnel.c.obj
+esp-idf/main/libmain.a: esp-idf/main/CMakeFiles/__idf_main.dir/eth_tap.c.obj
 esp-idf/main/libmain.a: esp-idf/main/CMakeFiles/__idf_main.dir/build.make
 esp-idf/main/libmain.a: esp-idf/main/CMakeFiles/__idf_main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library libmain.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C static library libmain.a"
 	cd /Users/macbookair/esp/ETH_02/wire_bridge/build/esp-idf/main && $(CMAKE_COMMAND) -P CMakeFiles/__idf_main.dir/cmake_clean_target.cmake
 	cd /Users/macbookair/esp/ETH_02/wire_bridge/build/esp-idf/main && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/__idf_main.dir/link.txt --verbose=$(VERBOSE)
 

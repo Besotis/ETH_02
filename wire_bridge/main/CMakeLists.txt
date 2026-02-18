@@ -1,4 +1,9 @@
-idf_component_register(SRCS
-    "wire_bridge.c"
-    "display_status.c"
-    INCLUDE_DIRS ".")
+idf_component_register(
+    SRCS
+        "wire_bridge.c"
+        "display_status.c"
+        "bridge_wifi.c"
+        "udp_tunnel.c"
+        "eth_tap.c"
+    INCLUDE_DIRS "."
+)

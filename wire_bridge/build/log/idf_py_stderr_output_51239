@@ -1,8 +1,0 @@
-Command: make -j 6 all
-/Users/macbookair/esp/ETH_02/wire_bridge/main/display_status.c: In function 'lcd_draw_char':
-/Users/macbookair/esp/ETH_02/wire_bridge/main/display_status.c:185:15: warning: unused variable 'h' [-Wunused-variable]
-  185 |     const int h = gh * scale;
-      |               ^
-/Users/macbookair/esp/ETH_02/wire_bridge/main/display_status.c:184:15: warning: unused variable 'w' [-Wunused-variable]
-  184 |     const int w = (gw + 1) * scale;   // +1 space column
-      |               ^

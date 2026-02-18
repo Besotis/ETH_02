@@ -1,4 +1,0 @@
-Command: make -j 6 all
-/Users/macbookair/esp/ETH_02/wire_bridge/main/display_status.c:66:13: warning: 'st_fill_screen' defined but not used [-Wunused-function]
-   66 | static void st_fill_screen(uint16_t color565)
-      |             ^~~~~~~~~~~~~~

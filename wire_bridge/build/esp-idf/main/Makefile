@@ -175,6 +175,30 @@ __idf_main/fast:
 	cd /Users/macbookair/esp/ETH_02/wire_bridge/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/build
 .PHONY : __idf_main/fast
 
+bridge_wifi.obj: bridge_wifi.c.obj
+.PHONY : bridge_wifi.obj
+
+# target to build an object file
+bridge_wifi.c.obj:
+	cd /Users/macbookair/esp/ETH_02/wire_bridge/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/bridge_wifi.c.obj
+.PHONY : bridge_wifi.c.obj
+
+bridge_wifi.i: bridge_wifi.c.i
+.PHONY : bridge_wifi.i
+
+# target to preprocess a source file
+bridge_wifi.c.i:
+	cd /Users/macbookair/esp/ETH_02/wire_bridge/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/bridge_wifi.c.i
+.PHONY : bridge_wifi.c.i
+
+bridge_wifi.s: bridge_wifi.c.s
+.PHONY : bridge_wifi.s
+
+# target to generate assembly for a file
+bridge_wifi.c.s:
+	cd /Users/macbookair/esp/ETH_02/wire_bridge/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/bridge_wifi.c.s
+.PHONY : bridge_wifi.c.s
+
 display_status.obj: display_status.c.obj
 .PHONY : display_status.obj
 
@@ -198,6 +222,54 @@ display_status.s: display_status.c.s
 display_status.c.s:
 	cd /Users/macbookair/esp/ETH_02/wire_bridge/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/display_status.c.s
 .PHONY : display_status.c.s
+
+eth_tap.obj: eth_tap.c.obj
+.PHONY : eth_tap.obj
+
+# target to build an object file
+eth_tap.c.obj:
+	cd /Users/macbookair/esp/ETH_02/wire_bridge/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/eth_tap.c.obj
+.PHONY : eth_tap.c.obj
+
+eth_tap.i: eth_tap.c.i
+.PHONY : eth_tap.i
+
+# target to preprocess a source file
+eth_tap.c.i:
+	cd /Users/macbookair/esp/ETH_02/wire_bridge/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/eth_tap.c.i
+.PHONY : eth_tap.c.i
+
+eth_tap.s: eth_tap.c.s
+.PHONY : eth_tap.s
+
+# target to generate assembly for a file
+eth_tap.c.s:
+	cd /Users/macbookair/esp/ETH_02/wire_bridge/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/eth_tap.c.s
+.PHONY : eth_tap.c.s
+
+udp_tunnel.obj: udp_tunnel.c.obj
+.PHONY : udp_tunnel.obj
+
+# target to build an object file
+udp_tunnel.c.obj:
+	cd /Users/macbookair/esp/ETH_02/wire_bridge/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/udp_tunnel.c.obj
+.PHONY : udp_tunnel.c.obj
+
+udp_tunnel.i: udp_tunnel.c.i
+.PHONY : udp_tunnel.i
+
+# target to preprocess a source file
+udp_tunnel.c.i:
+	cd /Users/macbookair/esp/ETH_02/wire_bridge/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/udp_tunnel.c.i
+.PHONY : udp_tunnel.c.i
+
+udp_tunnel.s: udp_tunnel.c.s
+.PHONY : udp_tunnel.s
+
+# target to generate assembly for a file
+udp_tunnel.c.s:
+	cd /Users/macbookair/esp/ETH_02/wire_bridge/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/udp_tunnel.c.s
+.PHONY : udp_tunnel.c.s
 
 wire_bridge.obj: wire_bridge.c.obj
 .PHONY : wire_bridge.obj
@@ -236,9 +308,18 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... __idf_main"
+	@echo "... bridge_wifi.obj"
+	@echo "... bridge_wifi.i"
+	@echo "... bridge_wifi.s"
 	@echo "... display_status.obj"
 	@echo "... display_status.i"
 	@echo "... display_status.s"
+	@echo "... eth_tap.obj"
+	@echo "... eth_tap.i"
+	@echo "... eth_tap.s"
+	@echo "... udp_tunnel.obj"
+	@echo "... udp_tunnel.i"
+	@echo "... udp_tunnel.s"
 	@echo "... wire_bridge.obj"
 	@echo "... wire_bridge.i"
 	@echo "... wire_bridge.s"

@@ -34563,6 +34563,103 @@
             {
                 "children": [
                     {
+                        "children": [
+                            {
+                                "children": [],
+                                "depends_on": "<choice>",
+                                "help": null,
+                                "id": "WB_ROLE_AP",
+                                "name": "WB_ROLE_AP",
+                                "range": null,
+                                "title": "AP (ESP-A): creates Wi-Fi AP, peer is STA",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "<choice>",
+                                "help": null,
+                                "id": "WB_ROLE_STA",
+                                "name": "WB_ROLE_STA",
+                                "range": null,
+                                "title": "STA (ESP-B): connects to AP, peer is AP",
+                                "type": "bool"
+                            }
+                        ],
+                        "depends_on": null,
+                        "help": null,
+                        "id": "component-config-wire-bridge-bridge-role-Users-macbookair-esp-ETH_02-wire_bridge-main-Kconfig-3",
+                        "name": null,
+                        "title": "Bridge role",
+                        "type": "choice"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": null,
+                        "id": "WB_WIFI_SSID",
+                        "name": "WB_WIFI_SSID",
+                        "range": null,
+                        "title": "Wi-Fi SSID",
+                        "type": "string"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": null,
+                        "id": "WB_WIFI_PASS",
+                        "name": "WB_WIFI_PASS",
+                        "range": null,
+                        "title": "Wi-Fi password",
+                        "type": "string"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": null,
+                        "id": "WB_WIFI_CHANNEL",
+                        "name": "WB_WIFI_CHANNEL",
+                        "range": [
+                            1,
+                            13
+                        ],
+                        "title": "Wi-Fi channel (AP)",
+                        "type": "int"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": null,
+                        "id": "WB_UDP_PORT",
+                        "name": "WB_UDP_PORT",
+                        "range": [
+                            1,
+                            65535
+                        ],
+                        "title": "UDP port",
+                        "type": "int"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": null,
+                        "id": "WB_MAX_PAYLOAD",
+                        "name": "WB_MAX_PAYLOAD",
+                        "range": [
+                            400,
+                            1400
+                        ],
+                        "title": "UDP payload bytes (fragment size)",
+                        "type": "int"
+                    }
+                ],
+                "depends_on": null,
+                "id": "component-config-wire-bridge-Users-macbookair-esp-ETH_02-wire_bridge-main-Kconfig-1",
+                "title": "Wire Bridge",
+                "type": "menu"
+            },
+            {
+                "children": [
+                    {
                         "children": [],
                         "depends_on": "SOC_PPA_SUPPORTED",
                         "help": "Enables using PPA for screen rotation.",

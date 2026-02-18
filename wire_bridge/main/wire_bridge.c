@@ -1,98 +1,102 @@
+// wire_bridge.c — full app glue: LCD + WiFi (AP/STA via Kconfig) + UDP tunnel + ETH TAP
+// Topology: ETH <-> ESP32 (WT32-ETH02) <-> WiFi+UDP <-> ESP32 <-> ETH
+// Role selected in menuconfig: Wire Bridge -> Bridge role
+
 #include <stdio.h>
+#include <string.h>
+
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+
 #include "esp_log.h"
 #include "esp_event.h"
 #include "nvs_flash.h"
 #include "esp_netif.h"
 
-#include "esp_eth.h"
-#include "esp_eth_mac.h"
-#include "esp_eth_phy.h"
-#include "esp_eth_mac_esp.h"
-#include "esp_eth_phy_lan87xx.h"   // tu jau turi per managed_components espressif__lan87xx
-
 #include "display_status.h"
+#include "bridge_wifi.h"
+#include "udp_tunnel.h"
+#include "eth_tap.h"
 
 static const char *TAG = "wire_bridge";
 
-static volatile bool s_eth_link = false;
+static status_t g_st = {0};
 
-static void eth_event_handler(void *arg, esp_event_base_t event_base, int32_t event_id, void *event_data)
+// ETH -> UDP
+static void on_eth_frame(const uint8_t *frame, size_t len, void *user)
 {
-    if (event_id == ETHERNET_EVENT_CONNECTED) {
-        s_eth_link = true;
-        ESP_LOGI(TAG, "ETH LINK UP");
-    } else if (event_id == ETHERNET_EVENT_DISCONNECTED) {
-        s_eth_link = false;
-        ESP_LOGW(TAG, "ETH LINK DOWN");
-    } else if (event_id == ETHERNET_EVENT_START) {
-        ESP_LOGI(TAG, "ETH START");
-    } else if (event_id == ETHERNET_EVENT_STOP) {
-        ESP_LOGI(TAG, "ETH STOP");
+    (void)user;
+
+    // Forward raw L2 frame into UDP tunnel
+    if (!wb_udp_send_frame(frame, len)) {
+        // queue full etc.
+        g_st.udp_drop++;
     }
 }
 
-static void eth_init_start(void)
+// UDP -> ETH
+static void on_udp_frame(const uint8_t *frame, size_t len, void *user)
 {
-    ESP_ERROR_CHECK(esp_event_handler_register(ETH_EVENT, ESP_EVENT_ANY_ID, &eth_event_handler, NULL));
+    (void)user;
 
-    // MAC config
-    eth_mac_config_t mac_config = ETH_MAC_DEFAULT_CONFIG();
+    // Inject frame back to Ethernet
+    (void)wb_eth_send(frame, len);
+}
 
-    // ESP32 EMAC specific config (IDF 6.x)
-    eth_esp32_emac_config_t emac_config = ETH_ESP32_EMAC_DEFAULT_CONFIG();
+static void status_task(void *arg)
+{
+    (void)arg;
 
-    // WT32-ETHxx dažnai naudoja external RMII clock į GPIO0
-    emac_config.clock_config.rmii.clock_mode = EMAC_CLK_EXT_IN;
-    emac_config.clock_config.rmii.clock_gpio = 0;
+    while (1) {
+        wb_wifi_state_t ws = wb_wifi_get_state();
 
-    esp_eth_mac_t *mac = esp_eth_mac_new_esp32(&emac_config, &mac_config);
-    assert(mac);
+        g_st.eth_link = wb_eth_link_up();
+        g_st.wifi_up  = ws.ok;
+        g_st.rssi     = ws.rssi;
 
-    // PHY config
-    eth_phy_config_t phy_config = ETH_PHY_DEFAULT_CONFIG();
-    phy_config.phy_addr = 1;
-    phy_config.reset_gpio_num = 16;
+        g_st.udp_tx   = wb_udp_get_tx();
+        g_st.udp_rx   = wb_udp_get_rx();
+        g_st.udp_drop = wb_udp_get_drop();
 
-    esp_eth_phy_t *phy = esp_eth_phy_new_lan87xx(&phy_config);
-    assert(phy);
+        display_set_status(&g_st);
 
-    esp_eth_config_t eth_config = ETH_DEFAULT_CONFIG(mac, phy);
-    esp_eth_handle_t eth_handle = NULL;
-
-    ESP_ERROR_CHECK(esp_eth_driver_install(&eth_config, &eth_handle));
-    ESP_ERROR_CHECK(esp_eth_start(eth_handle));
+        vTaskDelay(pdMS_TO_TICKS(250));
+    }
 }
 
 void app_main(void)
 {
+    // Base system init (required for WiFi + ETH events)
     ESP_ERROR_CHECK(nvs_flash_init());
     ESP_ERROR_CHECK(esp_netif_init());
     ESP_ERROR_CHECK(esp_event_loop_create_default());
 
-    // LCD
+    // LCD (LVGL) first so we see life early
     display_init();
 
-    // Ethernet
-    eth_init_start();
-    ESP_LOGI(TAG, "Init done (LCD+ETH).");
+    ESP_LOGI(TAG, "Starting WiFi (%s)...",
+#if CONFIG_WB_ROLE_AP
+             "AP"
+#else
+             "STA"
+#endif
+    );
+    wb_wifi_start();
 
-    status_t st = {0};
-    uint32_t t = 0;
+    // Start UDP tunnel (socket + rx/tx tasks)
+    wb_udp_start(on_udp_frame, NULL);
 
-    while (1) {
-        // Šitam etape WiFi/UDP dar nejungiam – tik testuojam monitoringą.
-        st.eth_link = s_eth_link;
-        st.wifi_up = false;
+    // Start Ethernet + TAP (raw RX frames -> callback)
+    wb_eth_start(on_eth_frame, NULL);
 
-        // Demo counters kad matytum jog ekranas gyvas
-        st.udp_tx++;
-        if ((t++ % 3) == 0) st.udp_rx++;
-        if ((t % 11) == 0) st.udp_drop++;
+    // Status update to LCD
+    xTaskCreate(status_task, "status", 4096, NULL, 10, NULL);
 
-        display_set_status(&st);
-
-        vTaskDelay(pdMS_TO_TICKS(200));
-    }
+    ESP_LOGI(TAG, "Bridge running. Role=%s. UDP port=%d payload=%d",
+#if CONFIG_WB_ROLE_AP
+             "AP"
+#else
+             "STA"
+#endif
+             , CONFIG_WB_UDP_PORT, CONFIG_WB_MAX_PAYLOAD);
 }

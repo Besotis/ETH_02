@@ -1,0 +1,37 @@
+menu "Wire Bridge"
+
+choice
+    prompt "Bridge role"
+    default WB_ROLE_AP
+
+config WB_ROLE_AP
+    bool "AP (ESP-A): creates Wi-Fi AP, peer is STA"
+
+config WB_ROLE_STA
+    bool "STA (ESP-B): connects to AP, peer is AP"
+endchoice
+
+config WB_WIFI_SSID
+    string "Wi-Fi SSID"
+    default "BRIDGE_AP"
+
+config WB_WIFI_PASS
+    string "Wi-Fi password"
+    default "12345678"
+
+config WB_WIFI_CHANNEL
+    int "Wi-Fi channel (AP)"
+    default 6
+    range 1 13
+
+config WB_UDP_PORT
+    int "UDP port"
+    default 3333
+    range 1 65535
+
+config WB_MAX_PAYLOAD
+    int "UDP payload bytes (fragment size)"
+    default 1200
+    range 400 1400
+
+endmenu
