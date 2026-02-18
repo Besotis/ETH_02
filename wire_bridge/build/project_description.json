@@ -1,7 +1,7 @@
 {
     "version":            "1.3",
     "project_name":       "wire_bridge",
-    "project_version":    "16d4963-dirty",
+    "project_version":    "d68dd07-dirty",
     "project_path":       "/Users/macbookair/esp/ETH_02/wire_bridge",
     "idf_path":           "/Users/macbookair/esp-idf",
     "build_dir":          "/Users/macbookair/esp/ETH_02/wire_bridge/build",
@@ -1806,9 +1806,9 @@
             "type": "LIBRARY",
             "lib": "__idf_main",
             "reqs": [],
-            "priv_reqs": [ "espressif__esp_lvgl_port", "espressif__lan87xx" ],
+            "priv_reqs": [ "espressif__esp_lvgl_port", "espressif__lan87xx", "lvgl__lvgl" ],
             "managed_reqs": [],
-            "managed_priv_reqs": [ "espressif__esp_lvgl_port", "espressif__lan87xx" ],
+            "managed_priv_reqs": [ "espressif__esp_lvgl_port", "espressif__lan87xx", "lvgl__lvgl" ],
             "file": "/Users/macbookair/esp/ETH_02/wire_bridge/build/esp-idf/main/libmain.a",
             "sources": [ "/Users/macbookair/esp/ETH_02/wire_bridge/main/wire_bridge.c", "/Users/macbookair/esp/ETH_02/wire_bridge/main/display_status.c" ],
             "include_dirs": [ "." ]
@@ -3945,9 +3945,9 @@
             "source": "project_components",
             "lib": "__idf_main",
             "reqs": [],
-            "priv_reqs": [ "espressif__esp_lvgl_port", "espressif__lan87xx" ],
+            "priv_reqs": [ "espressif__esp_lvgl_port", "espressif__lan87xx", "lvgl__lvgl" ],
             "managed_reqs": [],
-            "managed_priv_reqs": [ "espressif__esp_lvgl_port", "espressif__lan87xx" ],
+            "managed_priv_reqs": [ "espressif__esp_lvgl_port", "espressif__lan87xx", "lvgl__lvgl" ],
             "include_dirs": [ "." ]
         },
         "espressif__esp_lvgl_port": {

@@ -1,0 +1,8 @@
+Command: make -j 6 all
+/Users/macbookair/esp/ETH_02/wire_bridge/main/display_status.c: In function 'display_init':
+/Users/macbookair/esp/ETH_02/wire_bridge/main/display_status.c:85:14: error: 'struct esp_lcd_spi_flags_t' has no member named 'swap_color_bytes'
+   85 |             .swap_color_bytes = 1, // <-- FIX: RGB565 byte swap, kad nebutu "spalvotu" artefaktu
+      |              ^~~~~~~~~~~~~~~~
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/display_status.c.obj] Error 1
+make[1]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [all] Error 2

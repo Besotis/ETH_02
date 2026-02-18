@@ -34,13 +34,14 @@ dependencies:
     component_hash: 17e68bfd21f0edf4c3ee838e2273da840bf3930e5dbc3bfa6c1190c3aed41f9f
     dependencies: []
     source:
-      registry_url: https://components.espressif.com
+      registry_url: https://components.espressif.com/
       type: service
     version: 9.4.0
 direct_dependencies:
 - espressif/esp_lvgl_port
 - espressif/lan87xx
 - idf
-manifest_hash: c90b1348aad1aab69cf0ecdce081d4217989bf584be5dbe926889580186922d9
+- lvgl/lvgl
+manifest_hash: af2945471cfc63489f75b4d9f5733a34be0f5776bad0058c56faa66171e3a409
 target: esp32
 version: 2.0.0

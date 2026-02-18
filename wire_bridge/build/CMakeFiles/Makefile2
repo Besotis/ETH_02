@@ -4026,20 +4026,16 @@ CMakeFiles/_project_elf_src.dir/clean:
 # Target rules for target CMakeFiles/wire_bridge.elf.dir
 
 # All Build rule for target.
+CMakeFiles/wire_bridge.elf.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 CMakeFiles/wire_bridge.elf.dir/all: CMakeFiles/_project_elf_src.dir/all
 CMakeFiles/wire_bridge.elf.dir/all: CMakeFiles/__ldgen_output_sections.ld.dir/all
-CMakeFiles/wire_bridge.elf.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 CMakeFiles/wire_bridge.elf.dir/all: esp-idf/esp_driver_gptimer/CMakeFiles/__idf_esp_driver_gptimer.dir/all
 CMakeFiles/wire_bridge.elf.dir/all: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/all
-CMakeFiles/wire_bridge.elf.dir/all: esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/all
-CMakeFiles/wire_bridge.elf.dir/all: esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/all
-CMakeFiles/wire_bridge.elf.dir/all: esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all
 CMakeFiles/wire_bridge.elf.dir/all: esp-idf/unity/CMakeFiles/__idf_unity.dir/all
 CMakeFiles/wire_bridge.elf.dir/all: esp-idf/cmock/CMakeFiles/__idf_cmock.dir/all
 CMakeFiles/wire_bridge.elf.dir/all: esp-idf/console/CMakeFiles/__idf_console.dir/all
 CMakeFiles/wire_bridge.elf.dir/all: esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/all
 CMakeFiles/wire_bridge.elf.dir/all: esp-idf/driver/CMakeFiles/__idf_driver.dir/all
-CMakeFiles/wire_bridge.elf.dir/all: esp-idf/esp_driver_dac/CMakeFiles/__idf_esp_driver_dac.dir/all
 CMakeFiles/wire_bridge.elf.dir/all: esp-idf/esp_driver_i2c/CMakeFiles/__idf_esp_driver_i2c.dir/all
 CMakeFiles/wire_bridge.elf.dir/all: esp-idf/esp_hal_ledc/CMakeFiles/__idf_esp_hal_ledc.dir/all
 CMakeFiles/wire_bridge.elf.dir/all: esp-idf/esp_driver_ledc/CMakeFiles/__idf_esp_driver_ledc.dir/all
@@ -4056,15 +4052,17 @@ CMakeFiles/wire_bridge.elf.dir/all: esp-idf/esp_driver_sdio/CMakeFiles/__idf_esp
 CMakeFiles/wire_bridge.elf.dir/all: esp-idf/esp_driver_sdm/CMakeFiles/__idf_esp_driver_sdm.dir/all
 CMakeFiles/wire_bridge.elf.dir/all: esp-idf/esp_driver_sdmmc/CMakeFiles/__idf_esp_driver_sdmmc.dir/all
 CMakeFiles/wire_bridge.elf.dir/all: esp-idf/esp_driver_sdspi/CMakeFiles/__idf_esp_driver_sdspi.dir/all
-CMakeFiles/wire_bridge.elf.dir/all: esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/all
-CMakeFiles/wire_bridge.elf.dir/all: esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all
-CMakeFiles/wire_bridge.elf.dir/all: esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/all
 CMakeFiles/wire_bridge.elf.dir/all: esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/all
 CMakeFiles/wire_bridge.elf.dir/all: esp-idf/esp_driver_twai/CMakeFiles/__idf_esp_driver_twai.dir/all
 CMakeFiles/wire_bridge.elf.dir/all: esp-idf/esp_hal_emac/CMakeFiles/__idf_esp_hal_emac.dir/all
+CMakeFiles/wire_bridge.elf.dir/all: esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/all
 CMakeFiles/wire_bridge.elf.dir/all: esp-idf/esp_hal_lcd/CMakeFiles/__idf_esp_hal_lcd.dir/all
 CMakeFiles/wire_bridge.elf.dir/all: esp-idf/esp_hid/CMakeFiles/__idf_esp_hid.dir/all
 CMakeFiles/wire_bridge.elf.dir/all: esp-idf/esp_https_server/CMakeFiles/__idf_esp_https_server.dir/all
+CMakeFiles/wire_bridge.elf.dir/all: esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/all
+CMakeFiles/wire_bridge.elf.dir/all: esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/all
+CMakeFiles/wire_bridge.elf.dir/all: esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all
+CMakeFiles/wire_bridge.elf.dir/all: esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all
 CMakeFiles/wire_bridge.elf.dir/all: esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/all
 CMakeFiles/wire_bridge.elf.dir/all: esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/all
 CMakeFiles/wire_bridge.elf.dir/all: esp-idf/perfmon/CMakeFiles/__idf_perfmon.dir/all
@@ -4074,6 +4072,8 @@ CMakeFiles/wire_bridge.elf.dir/all: esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lv
 CMakeFiles/wire_bridge.elf.dir/all: esp-idf/espressif__esp_lvgl_port/CMakeFiles/lvgl_port_lib.dir/all
 CMakeFiles/wire_bridge.elf.dir/all: esp-idf/espressif__lan87xx/CMakeFiles/__idf_espressif__lan87xx.dir/all
 CMakeFiles/wire_bridge.elf.dir/all: esp-idf/main/CMakeFiles/__idf_main.dir/all
+CMakeFiles/wire_bridge.elf.dir/all: esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/all
+CMakeFiles/wire_bridge.elf.dir/all: esp-idf/esp_driver_dac/CMakeFiles/__idf_esp_driver_dac.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/wire_bridge.elf.dir/build.make CMakeFiles/wire_bridge.elf.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/wire_bridge.elf.dir/build.make CMakeFiles/wire_bridge.elf.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num=100 "Built target wire_bridge.elf"
@@ -4269,15 +4269,11 @@ CMakeFiles/uf2-app.dir/clean:
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/esp_driver_gptimer/CMakeFiles/__idf_esp_driver_gptimer.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/all
-CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/all
-CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/all
-CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/unity/CMakeFiles/__idf_unity.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/cmock/CMakeFiles/__idf_cmock.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/console/CMakeFiles/__idf_console.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/driver/CMakeFiles/__idf_driver.dir/all
-CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/esp_driver_dac/CMakeFiles/__idf_esp_driver_dac.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/esp_driver_i2c/CMakeFiles/__idf_esp_driver_i2c.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/esp_hal_ledc/CMakeFiles/__idf_esp_hal_ledc.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/esp_driver_ledc/CMakeFiles/__idf_esp_driver_ledc.dir/all
@@ -4294,15 +4290,17 @@ CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/esp_driver_sdio/CMakeFile
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/esp_driver_sdm/CMakeFiles/__idf_esp_driver_sdm.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/esp_driver_sdmmc/CMakeFiles/__idf_esp_driver_sdmmc.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/esp_driver_sdspi/CMakeFiles/__idf_esp_driver_sdspi.dir/all
-CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/all
-CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all
-CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/esp_driver_twai/CMakeFiles/__idf_esp_driver_twai.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/esp_hal_emac/CMakeFiles/__idf_esp_hal_emac.dir/all
+CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/esp_hal_lcd/CMakeFiles/__idf_esp_hal_lcd.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/esp_hid/CMakeFiles/__idf_esp_hid.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/esp_https_server/CMakeFiles/__idf_esp_https_server.dir/all
+CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/all
+CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/all
+CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all
+CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/perfmon/CMakeFiles/__idf_perfmon.dir/all
@@ -4312,6 +4310,8 @@ CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/lvgl__lvgl/CMakeFiles/__i
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/espressif__esp_lvgl_port/CMakeFiles/lvgl_port_lib.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/espressif__lan87xx/CMakeFiles/__idf_espressif__lan87xx.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/main/CMakeFiles/__idf_main.dir/all
+CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/all
+CMakeFiles/__ldgen_output_sections.ld.dir/all: esp-idf/esp_driver_dac/CMakeFiles/__idf_esp_driver_dac.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/__ldgen_output_sections.ld.dir/build.make CMakeFiles/__ldgen_output_sections.ld.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/__ldgen_output_sections.ld.dir/build.make CMakeFiles/__ldgen_output_sections.ld.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num= "Built target __ldgen_output_sections.ld"
@@ -4331,9 +4331,6 @@ __ldgen_output_sections.ld: CMakeFiles/__ldgen_output_sections.ld.dir/rule
 # codegen rule for target.
 CMakeFiles/__ldgen_output_sections.ld.dir/codegen: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/codegen: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/all
-CMakeFiles/__ldgen_output_sections.ld.dir/codegen: esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/all
-CMakeFiles/__ldgen_output_sections.ld.dir/codegen: esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/all
-CMakeFiles/__ldgen_output_sections.ld.dir/codegen: esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/codegen: esp-idf/unity/CMakeFiles/__idf_unity.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/codegen: esp-idf/console/CMakeFiles/__idf_console.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/codegen: esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/all
@@ -4347,10 +4344,13 @@ CMakeFiles/__ldgen_output_sections.ld.dir/codegen: esp-idf/sdmmc/CMakeFiles/__id
 CMakeFiles/__ldgen_output_sections.ld.dir/codegen: esp-idf/esp_driver_sd_intf/CMakeFiles/__idf_esp_driver_sd_intf.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/codegen: esp-idf/esp_driver_sdmmc/CMakeFiles/__idf_esp_driver_sdmmc.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/codegen: esp-idf/esp_driver_sdspi/CMakeFiles/__idf_esp_driver_sdspi.dir/all
-CMakeFiles/__ldgen_output_sections.ld.dir/codegen: esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/codegen: esp-idf/esp_hal_emac/CMakeFiles/__idf_esp_hal_emac.dir/all
+CMakeFiles/__ldgen_output_sections.ld.dir/codegen: esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/codegen: esp-idf/esp_hal_lcd/CMakeFiles/__idf_esp_hal_lcd.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/codegen: esp-idf/esp_https_server/CMakeFiles/__idf_esp_https_server.dir/all
+CMakeFiles/__ldgen_output_sections.ld.dir/codegen: esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/all
+CMakeFiles/__ldgen_output_sections.ld.dir/codegen: esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/all
+CMakeFiles/__ldgen_output_sections.ld.dir/codegen: esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/codegen: esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/codegen: esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/all
 CMakeFiles/__ldgen_output_sections.ld.dir/codegen: esp-idf/espressif__esp_lvgl_port/CMakeFiles/lvgl_port_lib.dir/all
@@ -8553,9 +8553,9 @@ esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/clean:
 # Target rules for target esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ota.dir
 
 # All Build rule for target.
-esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ota.dir/all: esp-idf/mbedtls/CMakeFiles/custom_bundle.dir/all
 esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ota.dir/all: esp-idf/esp_system/CMakeFiles/memory_ld_in_preprocess.dir/all
 esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ota.dir/all: esp-idf/esp_system/CMakeFiles/sections_ld_in_preprocess.dir/all
+esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ota.dir/all: esp-idf/mbedtls/CMakeFiles/custom_bundle.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ota.dir/build.make esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ota.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ota.dir/build.make esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ota.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num= "Built target __idf_esp_https_ota"
@@ -8687,8 +8687,8 @@ esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/clean:
 
 # All Build rule for target.
 esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
-esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all: esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/all
 esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all: esp-idf/console/CMakeFiles/__idf_console.dir/all
+esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all: esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/build.make esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/build.make esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num=81 "Built target __idf_protocomm"
@@ -8721,10 +8721,10 @@ esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/clean:
 
 # All Build rule for target.
 esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
-esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all: esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/all
-esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all: esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all
 esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all: esp-idf/console/CMakeFiles/__idf_console.dir/all
 esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all: esp-idf/esp_https_server/CMakeFiles/__idf_esp_https_server.dir/all
+esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all: esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/all
+esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all: esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/build.make esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/build.make esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num= "Built target __idf_esp_local_ctrl"
@@ -8957,9 +8957,9 @@ esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/clean:
 # All Build rule for target.
 esp-idf/espressif__esp_lvgl_port/CMakeFiles/lvgl_port_lib.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 esp-idf/espressif__esp_lvgl_port/CMakeFiles/lvgl_port_lib.dir/all: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/all
-esp-idf/espressif__esp_lvgl_port/CMakeFiles/lvgl_port_lib.dir/all: esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/all
 esp-idf/espressif__esp_lvgl_port/CMakeFiles/lvgl_port_lib.dir/all: esp-idf/esp_driver_i2c/CMakeFiles/__idf_esp_driver_i2c.dir/all
 esp-idf/espressif__esp_lvgl_port/CMakeFiles/lvgl_port_lib.dir/all: esp-idf/esp_hal_lcd/CMakeFiles/__idf_esp_hal_lcd.dir/all
+esp-idf/espressif__esp_lvgl_port/CMakeFiles/lvgl_port_lib.dir/all: esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/all
 esp-idf/espressif__esp_lvgl_port/CMakeFiles/lvgl_port_lib.dir/all: esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/espressif__esp_lvgl_port/CMakeFiles/lvgl_port_lib.dir/build.make esp-idf/espressif__esp_lvgl_port/CMakeFiles/lvgl_port_lib.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/espressif__esp_lvgl_port/CMakeFiles/lvgl_port_lib.dir/build.make esp-idf/espressif__esp_lvgl_port/CMakeFiles/lvgl_port_lib.dir/build
@@ -8994,8 +8994,8 @@ esp-idf/espressif__esp_lvgl_port/CMakeFiles/lvgl_port_lib.dir/clean:
 # All Build rule for target.
 esp-idf/espressif__lan87xx/CMakeFiles/__idf_espressif__lan87xx.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 esp-idf/espressif__lan87xx/CMakeFiles/__idf_espressif__lan87xx.dir/all: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/all
-esp-idf/espressif__lan87xx/CMakeFiles/__idf_espressif__lan87xx.dir/all: esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/all
 esp-idf/espressif__lan87xx/CMakeFiles/__idf_espressif__lan87xx.dir/all: esp-idf/esp_hal_emac/CMakeFiles/__idf_esp_hal_emac.dir/all
+esp-idf/espressif__lan87xx/CMakeFiles/__idf_espressif__lan87xx.dir/all: esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/espressif__lan87xx/CMakeFiles/__idf_espressif__lan87xx.dir/build.make esp-idf/espressif__lan87xx/CMakeFiles/__idf_espressif__lan87xx.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/espressif__lan87xx/CMakeFiles/__idf_espressif__lan87xx.dir/build.make esp-idf/espressif__lan87xx/CMakeFiles/__idf_espressif__lan87xx.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num= "Built target __idf_espressif__lan87xx"
@@ -9030,15 +9030,11 @@ esp-idf/espressif__lan87xx/CMakeFiles/__idf_espressif__lan87xx.dir/clean:
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/xtensa/CMakeFiles/__idf_xtensa.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_driver_gptimer/CMakeFiles/__idf_esp_driver_gptimer.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_driver_spi/CMakeFiles/__idf_esp_driver_spi.dir/all
-esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/all
-esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/all
-esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/unity/CMakeFiles/__idf_unity.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/cmock/CMakeFiles/__idf_cmock.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/console/CMakeFiles/__idf_console.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_hal_twai/CMakeFiles/__idf_esp_hal_twai.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/driver/CMakeFiles/__idf_driver.dir/all
-esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_driver_dac/CMakeFiles/__idf_esp_driver_dac.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_driver_i2c/CMakeFiles/__idf_esp_driver_i2c.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_hal_ledc/CMakeFiles/__idf_esp_hal_ledc.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_driver_ledc/CMakeFiles/__idf_esp_driver_ledc.dir/all
@@ -9055,15 +9051,17 @@ esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_driver_sdio/CMakeFiles/_
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_driver_sdm/CMakeFiles/__idf_esp_driver_sdm.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_driver_sdmmc/CMakeFiles/__idf_esp_driver_sdmmc.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_driver_sdspi/CMakeFiles/__idf_esp_driver_sdspi.dir/all
-esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/all
-esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all
-esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_driver_touch_sens/CMakeFiles/__idf_esp_driver_touch_sens.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_driver_twai/CMakeFiles/__idf_esp_driver_twai.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_hal_emac/CMakeFiles/__idf_esp_hal_emac.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_eth/CMakeFiles/__idf_esp_eth.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_hal_lcd/CMakeFiles/__idf_esp_hal_lcd.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_hid/CMakeFiles/__idf_esp_hid.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_https_server/CMakeFiles/__idf_esp_https_server.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_lcd/CMakeFiles/__idf_esp_lcd.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/protobuf-c/CMakeFiles/__idf_protobuf-c.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_local_ctrl/CMakeFiles/__idf_esp_local_ctrl.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/wear_levelling/CMakeFiles/__idf_wear_levelling.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/fatfs/CMakeFiles/__idf_fatfs.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/perfmon/CMakeFiles/__idf_perfmon.dir/all
@@ -9072,6 +9070,8 @@ esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/spiffs/CMakeFiles/__idf_spif
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/lvgl__lvgl/CMakeFiles/__idf_lvgl__lvgl.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/espressif__esp_lvgl_port/CMakeFiles/lvgl_port_lib.dir/all
 esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/espressif__lan87xx/CMakeFiles/__idf_espressif__lan87xx.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_driver_cam/CMakeFiles/__idf_esp_driver_cam.dir/all
+esp-idf/main/CMakeFiles/__idf_main.dir/all: esp-idf/esp_driver_dac/CMakeFiles/__idf_esp_driver_dac.dir/all
 	$(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num= "Built target __idf_main"

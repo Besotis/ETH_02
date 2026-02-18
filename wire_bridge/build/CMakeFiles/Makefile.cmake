@@ -305,7 +305,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/Users/macbookair/esp-idf/tools/kconfig_new/confgen.py"
   "/Users/macbookair/esp-idf/tools/kconfig_new/config.env.in"
   "/Users/macbookair/esp/ETH_02/.git/HEAD"
-  "/Users/macbookair/esp/ETH_02/.git/logs/refs/heads/main"
+  "/Users/macbookair/esp/ETH_02/.git/refs/heads/main"
   "/Users/macbookair/esp/ETH_02/wire_bridge/CMakeLists.txt"
   "CMakeFiles/4.2.3/CMakeASMCompiler.cmake"
   "CMakeFiles/4.2.3/CMakeCCompiler.cmake"
