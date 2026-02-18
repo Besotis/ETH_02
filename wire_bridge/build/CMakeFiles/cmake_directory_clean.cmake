@@ -1,0 +1,16 @@
+file(REMOVE_RECURSE
+  "config/sdkconfig.h"
+  "config/sdkconfig.cmake"
+  "bootloader/bootloader.elf"
+  "bootloader/bootloader.bin"
+  "bootloader/bootloader.map"
+  "wire_bridge.map"
+  "project_elf_src_esp32.c"
+  "ldgen_libraries.in"
+  "ldgen_libraries"
+  "wire_bridge.bin"
+  "flash_app_args"
+  "flash_project_args"
+  "flasher_args.json.in"
+  "flasher_args.json"
+)
