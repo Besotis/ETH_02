@@ -49,24 +49,86 @@ esp-idf/main/CMakeFiles/__idf_main.dir/display_status.c.obj: \
  /Users/macbookair/esp-idf/components/log/include/esp_log_attr.h \
  /Users/macbookair/esp-idf/components/esp_common/include/esp_attr.h \
  /Users/macbookair/esp-idf/components/log/include/esp_private/log_attr.h \
- /Users/macbookair/esp-idf/components/esp_driver_spi/include/driver/spi_master.h \
- /Users/macbookair/esp-idf/components/esp_common/include/esp_err.h \
+ /Users/macbookair/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/FreeRTOS.h \
+ /Users/macbookair/esp-idf/components/freertos/config/include/freertos/FreeRTOSConfig.h \
+ /Users/macbookair/esp-idf/components/freertos/config/xtensa/include/freertos/FreeRTOSConfig_arch.h \
+ /Users/macbookair/esp-idf/components/xtensa/include/xtensa_config.h \
+ /Users/macbookair/esp-idf/components/xtensa/include/xtensa/hal.h \
+ /Users/macbookair/esp-idf/components/xtensa/esp32/include/xtensa/config/core.h \
+ /Users/macbookair/esp-idf/components/xtensa/include/xtensa/xtensa-versions.h \
+ /Users/macbookair/esp-idf/components/xtensa/esp32/include/xtensa/config/core-isa.h \
+ /Users/macbookair/esp-idf/components/xtensa/esp32/include/xtensa/config/core-matmap.h \
+ /Users/macbookair/esp-idf/components/xtensa/esp32/include/xtensa/config/tie.h \
+ /Users/macbookair/esp-idf/components/xtensa/esp32/include/xtensa/config/system.h \
+ /Users/macbookair/esp-idf/components/xtensa/include/xtensa_context.h \
+ /Users/macbookair/esp-idf/components/xtensa/include/xtensa/corebits.h \
+ /Users/macbookair/esp-idf/components/xtensa/include/xtensa/xtruntime-frames.h \
+ /Users/macbookair/esp-idf/components/esp_libc/platform_include/sys/reent.h \
+ /Users/macbookair/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/projdefs.h \
+ /Users/macbookair/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/portable.h \
+ /Users/macbookair/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/deprecated_definitions.h \
+ /Users/macbookair/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h \
+ /Users/macbookair/esp-idf/components/xtensa/include/xtensa/xtruntime.h \
+ /Users/macbookair/esp-idf/components/xtensa/esp32/include/xtensa/config/xt_specreg.h \
+ /Users/macbookair/esp-idf/components/xtensa/include/xtensa/xtruntime-core-state.h \
+ /Users/macbookair/esp-idf/components/xtensa/include/xt_instr_macros.h \
+ /Users/macbookair/esp-idf/components/xtensa/include/xtensa/xtruntime.h \
+ /Users/macbookair/esp-idf/components/esp_hw_support/include/spinlock.h \
+ /Users/macbookair/esp-idf/components/esp_hw_support/include/esp_cpu.h \
+ /Users/macbookair/esp-idf/components/xtensa/include/xtensa_api.h \
+ /Users/macbookair/esp-idf/components/xtensa/include/xt_utils.h \
+ /Users/macbookair/esp-idf/components/xtensa/esp32/include/xtensa/config/extreg.h \
+ /Users/macbookair/esp-idf/components/esp_common/include/esp_bit_defs.h \
+ /Users/macbookair/esp-idf/components/esp_hw_support/include/esp_intr_alloc.h \
  /Users/macbookair/esp-idf/components/esp_libc/platform_include/stdio.h \
  /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdio.h \
  /Users/macbookair/esp-idf/components/esp_libc/platform_include/sys/lock.h \
  /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/lock.h \
+ /Users/macbookair/esp-idf/components/esp_common/include/esp_err.h \
+ /Users/macbookair/esp-idf/components/esp_hw_support/include/esp_intr_types.h \
+ /Users/macbookair/esp-idf/components/esp_system/include/esp_private/crosscore_int.h \
+ /Users/macbookair/esp-idf/components/esp_hw_support/include/esp_memory_utils.h \
+ /Users/macbookair/esp-idf/components/soc/esp32/include/soc/soc.h \
+ /Users/macbookair/esp-idf/components/soc/esp32/include/soc/interrupts.h \
+ /Users/macbookair/esp-idf/components/soc/esp32/register/soc/reg_base.h \
+ /Users/macbookair/esp-idf/components/esp_libc/platform_include/esp_newlib.h \
+ /Users/macbookair/esp-idf/components/heap/include/esp_heap_caps.h \
+ /Users/macbookair/esp-idf/components/heap/include/multi_heap.h \
+ /Users/macbookair/esp-idf/components/esp_system/include/esp_system.h \
+ /Users/macbookair/esp-idf/components/esp_common/include/esp_idf_version.h \
+ /Users/macbookair/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portbenchmark.h \
+ /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/limits.h \
+ /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/syslimits.h \
+ /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/limits.h \
+ /Users/macbookair/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/mpu_wrappers.h \
+ /Users/macbookair/esp-idf/components/freertos/esp_additions/include/freertos/idf_additions.h \
+ /Users/macbookair/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/task.h \
+ /Users/macbookair/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/list.h \
+ /Users/macbookair/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/queue.h \
+ /Users/macbookair/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/task.h \
+ /Users/macbookair/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/semphr.h \
+ /Users/macbookair/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/queue.h \
+ /Users/macbookair/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/stream_buffer.h \
+ /Users/macbookair/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/message_buffer.h \
+ /Users/macbookair/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/stream_buffer.h \
+ /Users/macbookair/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/event_groups.h \
+ /Users/macbookair/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/timers.h \
+ /Users/macbookair/esp-idf/components/esp_driver_spi/include/driver/spi_master.h \
  /Users/macbookair/esp-idf/components/esp_hal_gpspi/include/hal/spi_types.h \
- /Users/macbookair/esp-idf/components/esp_common/include/esp_bit_defs.h \
  /Users/macbookair/esp-idf/components/soc/esp32/include/soc/clk_tree_defs.h \
  /Users/macbookair/esp-idf/components/esp_driver_spi/include/driver/spi_common.h \
  /Users/macbookair/esp-idf/components/esp_system/include/esp_ipc.h \
- /Users/macbookair/esp-idf/components/esp_hw_support/include/esp_intr_types.h \
+ /Users/macbookair/esp-idf/components/esp_driver_gpio/include/driver/gpio.h \
+ /Users/macbookair/esp-idf/components/esp_hal_gpio/include/hal/gpio_types.h \
+ /Users/macbookair/esp-idf/components/esp_hal_gpio/esp32/include/soc/gpio_num.h \
+ /Users/macbookair/esp-idf/components/esp_rom/include/esp_rom_gpio.h \
+ /Users/macbookair/esp-idf/components/soc/esp32/include/soc/gpio_pins.h \
+ /Users/macbookair/esp-idf/components/esp_driver_gpio/include/driver/gpio_etm.h \
+ /Users/macbookair/esp-idf/components/esp_hw_support/etm/include/esp_etm.h \
  /Users/macbookair/esp-idf/components/esp_lcd/include/esp_lcd_panel_io.h \
  /Users/macbookair/esp-idf/components/esp_lcd/include/esp_lcd_types.h \
  /Users/macbookair/esp-idf/components/esp_hal_lcd/include/hal/lcd_types.h \
  /Users/macbookair/esp-idf/components/hal/include/hal/color_types.h \
- /Users/macbookair/esp-idf/components/esp_hal_gpio/include/hal/gpio_types.h \
- /Users/macbookair/esp-idf/components/esp_hal_gpio/esp32/include/soc/gpio_num.h \
  /Users/macbookair/esp-idf/components/esp_lcd/include/esp_lcd_io_i80.h \
  /Users/macbookair/esp-idf/components/esp_lcd/include/esp_lcd_io_i2c.h \
  /Users/macbookair/esp-idf/components/esp_driver_i2c/include/driver/i2c_types.h \
