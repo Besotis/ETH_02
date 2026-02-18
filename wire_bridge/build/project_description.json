@@ -1,7 +1,7 @@
 {
     "version":            "1.3",
     "project_name":       "wire_bridge",
-    "project_version":    "4b6aabd-dirty",
+    "project_version":    "6bf8148-dirty",
     "project_path":       "/Users/macbookair/esp/ETH_02/wire_bridge",
     "idf_path":           "/Users/macbookair/esp-idf",
     "build_dir":          "/Users/macbookair/esp/ETH_02/wire_bridge/build",

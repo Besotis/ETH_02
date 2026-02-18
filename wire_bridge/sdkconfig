@@ -3213,9 +3213,7 @@ CONFIG_WL_SECTOR_SIZE=4096
 #
 # Wire Bridge
 #
-# default:
 CONFIG_WB_ROLE_AP=y
-# default:
 # CONFIG_WB_ROLE_STA is not set
 # default:
 CONFIG_WB_WIFI_SSID="BRIDGE_AP"

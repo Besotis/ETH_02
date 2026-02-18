@@ -8,5 +8,5 @@ C_INCLUDES = -I/Users/macbookair/esp/ETH_02/wire_bridge/build/config -I/Users/ma
 
 C_FLAGS = @"/Users/macbookair/esp/ETH_02/wire_bridge/build/toolchain/cflags" -fdiagnostics-color=always -ffunction-sections -fdata-sections -Wall -Werror -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-error=extra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -Og -fno-shrink-wrap -fmacro-prefix-map=/Users/macbookair/esp/ETH_02/wire_bridge=. -fmacro-prefix-map=/Users/macbookair/esp-idf=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu23 -Wno-old-style-declaration -fzero-init-padding-bits=all -fno-malloc-dce
 
-# Custom defines: esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/esp_app_desc.c.obj_DEFINES = PROJECT_VER="4b6aabd-dirty"; PROJECT_NAME="wire_bridge"
+# Custom defines: esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/esp_app_desc.c.obj_DEFINES = PROJECT_VER="6bf8148-dirty"; PROJECT_NAME="wire_bridge"
 

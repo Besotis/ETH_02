@@ -2,6 +2,7 @@
 #include "bridge_cfg.h"
 
 #include <string.h>
+#include <stdlib.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
@@ -15,8 +16,11 @@ static const char *TAG = "wb_udp";
 
 #define WB_MAGIC 0xBEEF
 #define WB_VER   1
-#define WB_MTU   CONFIG_WB_MAX_PAYLOAD   // fragment payload
 
+#define WB_MAX_FRAME   1600                 // max Ethernet frame we accept
+#define WB_MTU         CONFIG_WB_MAX_PAYLOAD // fragment payload (e.g. 1200)
+
+// ---------- header ----------
 typedef struct __attribute__((packed)) {
     uint16_t magic;
     uint8_t  ver;
@@ -27,17 +31,19 @@ typedef struct __attribute__((packed)) {
     uint16_t frag_len;
 } wb_hdr_t;
 
+// ---------- reassembly ----------
 typedef struct {
     uint16_t seq;
     uint16_t frame_len;
     uint16_t got;
-    uint8_t  buf[1600];
+    uint8_t  buf[WB_MAX_FRAME];
     bool     in_use;
 } wb_reasm_t;
 
+// ---------- TX queue item (SMALL!) ----------
 typedef struct {
     uint16_t len;
-    uint8_t  data[1600];
+    uint8_t *buf;     // malloc'd, freed in tx task
 } tx_item_t;
 
 static int s_sock = -1;
@@ -46,7 +52,7 @@ static struct sockaddr_in s_peer = {0};
 static wb_frame_rx_cb_t s_rx_cb = NULL;
 static void *s_rx_user = NULL;
 
-static QueueHandle_t s_txq;
+static QueueHandle_t s_txq = NULL;
 
 static wb_reasm_t s_re = {0};
 static uint16_t s_seq = 1;
@@ -72,22 +78,21 @@ static void handle_packet(const uint8_t *p, int n)
     wb_hdr_t h;
     memcpy(&h, p, sizeof(h));
     if (h.magic != WB_MAGIC || h.ver != WB_VER) { s_drop++; return; }
+
+    if (h.frame_len == 0 || h.frame_len > WB_MAX_FRAME) { s_drop++; return; }
     if ((int)(sizeof(wb_hdr_t) + h.frag_len) != n) { s_drop++; return; }
-    if (h.frame_len == 0 || h.frame_len > sizeof(s_re.buf)) { s_drop++; return; }
     if ((uint32_t)h.frag_off + (uint32_t)h.frag_len > (uint32_t)h.frame_len) { s_drop++; return; }
 
     const uint8_t *payload = p + sizeof(wb_hdr_t);
 
-    // max 2 fragments assumption is not required here; this works for any offsets
     if (!s_re.in_use || s_re.seq != h.seq || s_re.frame_len != h.frame_len) {
         reasm_reset(h.seq, h.frame_len);
     }
 
     memcpy(&s_re.buf[h.frag_off], payload, h.frag_len);
-    s_re.got += h.frag_len;
+    s_re.got = (uint16_t)(s_re.got + h.frag_len); // simple (no dup handling)
 
     if (s_re.got >= s_re.frame_len) {
-        // Frame complete (simple counter; ok when we always send non-overlapping frags)
         if (s_rx_cb) s_rx_cb(s_re.buf, s_re.frame_len, s_rx_user);
         s_re.in_use = false;
     }
@@ -109,12 +114,19 @@ static void udp_rx_task(void *arg)
 static void udp_tx_task(void *arg)
 {
     (void)arg;
+
     tx_item_t it;
 
     while (1) {
+        // IMPORTANT: s_txq must be valid
         if (xQueueReceive(s_txq, &it, portMAX_DELAY) != pdTRUE) continue;
 
-        // fragment into WB_MTU
+        if (!it.buf || it.len == 0 || it.len > WB_MAX_FRAME) {
+            s_drop++;
+            if (it.buf) free(it.buf);
+            continue;
+        }
+
         uint16_t seq = s_seq++;
         uint16_t frame_len = it.len;
 
@@ -133,13 +145,17 @@ static void udp_tx_task(void *arg)
                 .frag_len = frag,
             };
             memcpy(out, &h, sizeof(h));
-            memcpy(out + sizeof(h), it.data + off, frag);
+            memcpy(out + sizeof(h), it.buf + off, frag);
 
-            int sent = sendto(s_sock, out, sizeof(h) + frag, 0, (struct sockaddr*)&s_peer, sizeof(s_peer));
-            if (sent > 0) s_tx++; else s_drop++;
+            int sent = sendto(s_sock, out, sizeof(h) + frag, 0,
+                              (struct sockaddr*)&s_peer, sizeof(s_peer));
+            if (sent > 0) s_tx++;
+            else s_drop++;
 
-            off += frag;
+            off = (uint16_t)(off + frag);
         }
+
+        free(it.buf);
     }
 }
 
@@ -168,38 +184,48 @@ void wb_udp_start(wb_frame_rx_cb_t cb, void *user)
     s_peer.sin_port = htons(CONFIG_WB_UDP_PORT);
 
 #if CONFIG_WB_ROLE_AP
-    // peer = STA 192.168.50.2
     s_peer.sin_addr.s_addr = inet_addr("192.168.50.2");
 #else
-    // peer = AP 192.168.50.1
     s_peer.sin_addr.s_addr = inet_addr("192.168.50.1");
 #endif
 
-    s_txq = xQueueCreate(32, sizeof(tx_item_t));
+    // SMALL queue now (items are tiny)
+    s_txq = xQueueCreate(16, sizeof(tx_item_t));
+    if (!s_txq) {
+        ESP_LOGE(TAG, "xQueueCreate failed (no RAM)");
+        return;
+    }
 
     xTaskCreate(udp_rx_task, "wb_udp_rx", 4096, NULL, 18, NULL);
     xTaskCreate(udp_tx_task, "wb_udp_tx", 4096, NULL, 18, NULL);
 
-    ESP_LOGI(TAG, "UDP tunnel: port=%d peer=%s",
+    ESP_LOGI(TAG, "UDP tunnel: port=%d peer=%s payload=%d",
              CONFIG_WB_UDP_PORT,
 #if CONFIG_WB_ROLE_AP
              "192.168.50.2"
 #else
              "192.168.50.1"
 #endif
-    );
+             , WB_MTU);
 }
 
 bool wb_udp_send_frame(const uint8_t *frame, size_t len)
 {
-    if (!s_txq || len == 0 || len > sizeof(((tx_item_t*)0)->data)) return false;
+    if (!s_txq || !frame || len == 0 || len > WB_MAX_FRAME) return false;
 
     tx_item_t it = {0};
     it.len = (uint16_t)len;
-    memcpy(it.data, frame, len);
+    it.buf = (uint8_t*)malloc(len);
+    if (!it.buf) {
+        s_drop++;
+        return false;
+    }
+    memcpy(it.buf, frame, len);
 
     if (xQueueSend(s_txq, &it, 0) == pdTRUE) return true;
 
+    // queue full
+    free(it.buf);
     s_drop++;
     return false;
 }

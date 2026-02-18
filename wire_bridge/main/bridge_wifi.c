@@ -13,7 +13,6 @@
 #include "esp_event.h"
 #include "esp_wifi.h"
 #include "esp_netif.h"
-#include "nvs_flash.h"
 
 #include "lwip/ip4_addr.h"   // IP4_ADDR
 
@@ -29,6 +28,7 @@ static void set_static_ip_ap(void)
     IP4_ADDR(&ip.gw,      WB_NET_BASE_IP0, WB_NET_BASE_IP1, WB_NET_BASE_IP2, WB_IP_AP_LAST);
     IP4_ADDR(&ip.netmask, WB_NETMASK0, WB_NETMASK1, WB_NETMASK2, WB_NETMASK3);
 
+    // AP netif has DHCP server by default in create_default_wifi_ap()
     ESP_ERROR_CHECK(esp_netif_dhcps_stop(s_netif));
     ESP_ERROR_CHECK(esp_netif_set_ip_info(s_netif, &ip));
     ESP_ERROR_CHECK(esp_netif_dhcps_start(s_netif));
@@ -42,6 +42,7 @@ static void set_static_ip_sta(void)
     IP4_ADDR(&ip.gw,      WB_NET_BASE_IP0, WB_NET_BASE_IP1, WB_NET_BASE_IP2, WB_IP_AP_LAST);
     IP4_ADDR(&ip.netmask, WB_NETMASK0, WB_NETMASK1, WB_NETMASK2, WB_NETMASK3);
 
+    // STA netif has DHCP client by default; we disable and set static
     ESP_ERROR_CHECK(esp_netif_dhcpc_stop(s_netif));
     ESP_ERROR_CHECK(esp_netif_set_ip_info(s_netif, &ip));
 }
@@ -49,41 +50,40 @@ static void set_static_ip_sta(void)
 
 static void wifi_event_handler(void *arg, esp_event_base_t base, int32_t id, void *data)
 {
-    (void)arg;
-    (void)base;
-    (void)data;
+    (void)arg; (void)base; (void)data;
 
 #if CONFIG_WB_ROLE_STA
     if (id == WIFI_EVENT_STA_START) {
+        ESP_LOGI(TAG, "STA start -> connect");
         esp_wifi_connect();
     } else if (id == WIFI_EVENT_STA_DISCONNECTED) {
         s_state.ok = false;
         s_state.rssi = 0;
+        ESP_LOGW(TAG, "STA disconnected -> reconnect");
         esp_wifi_connect();
+    }
+#else
+    if (id == WIFI_EVENT_AP_START) {
+        ESP_LOGI(TAG, "AP started");
     }
 #endif
 }
 
 static void ip_event_handler(void *arg, esp_event_base_t base, int32_t id, void *data)
 {
-    (void)arg;
-    (void)base;
-    (void)data;
+    (void)arg; (void)base; (void)data;
 
 #if CONFIG_WB_ROLE_STA
     if (id == IP_EVENT_STA_GOT_IP) {
         s_state.ok = true;
 
         wifi_ap_record_t ap = {0};
-        if (esp_wifi_sta_get_ap_info(&ap) == ESP_OK) {
-            s_state.rssi = ap.rssi;
-        } else {
-            s_state.rssi = 0;
-        }
-        ESP_LOGI(TAG, "STA got IP, rssi=%d", s_state.rssi);
+        if (esp_wifi_sta_get_ap_info(&ap) == ESP_OK) s_state.rssi = ap.rssi;
+        else s_state.rssi = 0;
+
+        ESP_LOGI(TAG, "STA got IP (static), rssi=%d", s_state.rssi);
     }
 #else
-    // IDF 6.x: replacement for deprecated IP_EVENT_AP_STAIPASSIGNED
     if (id == IP_EVENT_ASSIGNED_IP_TO_CLIENT) {
         ESP_LOGI(TAG, "AP assigned IP to client");
     }
@@ -92,10 +92,10 @@ static void ip_event_handler(void *arg, esp_event_base_t base, int32_t id, void 
 
 void wb_wifi_start(void)
 {
-    // safe if already initialized in app_main, but ok to keep as-is
-    ESP_ERROR_CHECK(nvs_flash_init());
-    ESP_ERROR_CHECK(esp_netif_init());
-    ESP_ERROR_CHECK(esp_event_loop_create_default());
+    // IMPORTANT:
+    // nvs_flash_init(), esp_netif_init(), esp_event_loop_create_default()
+    // MUST be done in app_main() once. Doing it here causes ESP_ERR_INVALID_STATE -> abort.
+    // So here we only init WiFi.
 
     wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
     ESP_ERROR_CHECK(esp_wifi_init(&cfg));
@@ -122,7 +122,7 @@ void wb_wifi_start(void)
     s_state.ok = true;
     s_state.rssi = 0;
 
-    ESP_LOGI(TAG, "AP started: ssid=%s ch=%d ip=192.168.50.1",
+    ESP_LOGI(TAG, "AP ready: ssid=%s ch=%d ip=192.168.50.1",
              CONFIG_WB_WIFI_SSID, CONFIG_WB_WIFI_CHANNEL);
 
 #else
@@ -139,8 +139,7 @@ void wb_wifi_start(void)
     ESP_ERROR_CHECK(esp_wifi_start());
 
     set_static_ip_sta();
-
-    ESP_LOGI(TAG, "STA started: ssid=%s ip=192.168.50.2 gw=192.168.50.1",
+    ESP_LOGI(TAG, "STA ready: ssid=%s ip=192.168.50.2 gw=192.168.50.1",
              CONFIG_WB_WIFI_SSID);
 #endif
 }

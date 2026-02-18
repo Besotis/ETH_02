@@ -22,15 +22,15 @@ esp-idf/main/CMakeFiles/__idf_main.dir/udp_tunnel.c.obj: \
  /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_types.h \
  /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_types.h \
  /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/string.h \
+ /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
+ /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/stdlib.h \
+ /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/alloca.h \
+ /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_wait.h \
  /Users/macbookair/esp-idf/components/lwip/port/esp32xx/include/sys/socket.h \
  /Users/macbookair/esp-idf/components/lwip/include/lwip/sockets.h \
  /Users/macbookair/esp-idf/components/lwip/lwip/src/include/lwip/sockets.h \
  /Users/macbookair/esp-idf/components/lwip/lwip/src/include/lwip/opt.h \
  /Users/macbookair/esp-idf/components/lwip/port/include/lwipopts.h \
- /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h \
- /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/stdlib.h \
- /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/alloca.h \
- /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_wait.h \
  /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/unistd.h \
  /Users/macbookair/esp-idf/components/esp_libc/platform_include/sys/unistd.h \
  /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/types.h \

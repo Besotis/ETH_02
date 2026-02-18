@@ -129,10 +129,6 @@ esp-idf/main/CMakeFiles/__idf_main.dir/bridge_wifi.c.obj: \
  /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_endian.h \
  /Users/macbookair/esp-idf/components/esp_netif/include/esp_netif_types.h \
  /Users/macbookair/esp-idf/components/esp_netif/include/esp_netif_defaults.h \
- /Users/macbookair/esp-idf/components/nvs_flash/include/nvs_flash.h \
- /Users/macbookair/esp-idf/components/nvs_flash/include/nvs.h \
- /Users/macbookair/esp-idf/components/esp_partition/include/esp_partition.h \
- /Users/macbookair/esp-idf/components/esp_blockdev/include/esp_blockdev.h \
  /Users/macbookair/esp-idf/components/lwip/lwip/src/include/lwip/ip4_addr.h \
  /Users/macbookair/esp-idf/components/lwip/lwip/src/include/lwip/opt.h \
  /Users/macbookair/esp-idf/components/lwip/port/include/lwipopts.h \
