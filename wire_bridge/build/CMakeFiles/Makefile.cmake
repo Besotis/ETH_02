@@ -328,7 +328,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/Users/macbookair/esp-idf/components/openthread/lib/.git"
   "/Users/macbookair/esp-idf/components/openthread/openthread/.git"
   "/Users/macbookair/esp-idf/components/partition_table/CMakeLists.txt"
-  "/Users/macbookair/esp-idf/components/partition_table/partitions_singleapp.csv"
   "/Users/macbookair/esp-idf/components/partition_table/project_include.cmake"
   "/Users/macbookair/esp-idf/components/perfmon/CMakeLists.txt"
   "/Users/macbookair/esp-idf/components/protobuf-c/CMakeLists.txt"
@@ -414,6 +413,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/Users/macbookair/esp/ETH_02/wire_bridge/managed_components/lvgl__lvgl/env_support/cmake/esp.cmake"
   "/Users/macbookair/esp/ETH_02/wire_bridge/managed_components/lvgl__lvgl/env_support/cmake/version.cmake"
   "/Users/macbookair/esp/ETH_02/wire_bridge/managed_components/lvgl__lvgl/idf_component.yml"
+  "/Users/macbookair/esp/ETH_02/wire_bridge/partitions.csv"
   "/Users/macbookair/esp/ETH_02/wire_bridge/sdkconfig"
   )
 

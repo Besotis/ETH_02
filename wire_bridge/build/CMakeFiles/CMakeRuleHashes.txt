@@ -51,6 +51,6 @@ b4510856ffe532ab79f6bb5688700099 esp-idf/esp_system/ld/sections.ld.in
 655634d92820d19eddadc48ec367d954 esp-idf/partition_table/CMakeFiles/partition_table
 655634d92820d19eddadc48ec367d954 esp-idf/partition_table/CMakeFiles/partition_table-flash
 fb683e02b2840414ee419612dcfd13b6 esp-idf/partition_table/CMakeFiles/partition_table_bin
-a235a1527521834951a858f4ae85c072 partition_table/partition-table.bin
+66576038e06bdfa9063f48167da1278c partition_table/partition-table.bin
 dae9b3ea19e46c152d0d297b248d6040 project_elf_src_esp32.c
 aadbbc0fa4a5ba68846be4a59f70fab0 x509_crt_bundle.S

@@ -69,10 +69,10 @@ include esp-idf/partition_table/CMakeFiles/partition_table_bin.dir/progress.make
 esp-idf/partition_table/CMakeFiles/partition_table_bin: partition_table/partition-table.bin
 esp-idf/partition_table/CMakeFiles/partition_table_bin: partition_table/partition-table.bin
 
-partition_table/partition-table.bin: /Users/macbookair/esp-idf/components/partition_table/partitions_singleapp.csv
+partition_table/partition-table.bin: /Users/macbookair/esp/ETH_02/wire_bridge/partitions.csv
 partition_table/partition-table.bin: /Users/macbookair/esp-idf/components/partition_table/gen_esp32part.py
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/macbookair/esp/ETH_02/wire_bridge/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating ../../partition_table/partition-table.bin"
-	cd /Users/macbookair/esp/ETH_02/wire_bridge/build/esp-idf/partition_table && /Users/macbookair/.espressif/python_env/idf6.1_py3.13_env/bin/python /Users/macbookair/esp-idf/components/partition_table/gen_esp32part.py -q --offset 0x8000 --primary-bootloader-offset 0x1000 --flash-size 8MB -- /Users/macbookair/esp-idf/components/partition_table/partitions_singleapp.csv /Users/macbookair/esp/ETH_02/wire_bridge/build/partition_table/partition-table.bin
+	cd /Users/macbookair/esp/ETH_02/wire_bridge/build/esp-idf/partition_table && /Users/macbookair/.espressif/python_env/idf6.1_py3.13_env/bin/python /Users/macbookair/esp-idf/components/partition_table/gen_esp32part.py -q --offset 0x8000 --primary-bootloader-offset 0x1000 --flash-size 8MB -- /Users/macbookair/esp/ETH_02/wire_bridge/partitions.csv /Users/macbookair/esp/ETH_02/wire_bridge/build/partition_table/partition-table.bin
 	cd /Users/macbookair/esp/ETH_02/wire_bridge/build/esp-idf/partition_table && /Applications/CMake.app/Contents/bin/cmake -E echo "Partition table binary generated. Contents:"
 	cd /Users/macbookair/esp/ETH_02/wire_bridge/build/esp-idf/partition_table && /Applications/CMake.app/Contents/bin/cmake -E echo "*******************************************************************************"
 	cd /Users/macbookair/esp/ETH_02/wire_bridge/build/esp-idf/partition_table && /Users/macbookair/.espressif/python_env/idf6.1_py3.13_env/bin/python /Users/macbookair/esp-idf/components/partition_table/gen_esp32part.py -q --offset 0x8000 --primary-bootloader-offset 0x1000 --flash-size 8MB -- /Users/macbookair/esp/ETH_02/wire_bridge/build/partition_table/partition-table.bin
