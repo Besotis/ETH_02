@@ -1,16 +1,12 @@
-// udp_tunnel.c — Ethernet(L2) over UDP with simple fragmentation + safe reassembly
+// udp_tunnel.c — Ethernet(L2) over UDP with fragmentation + robust reassembly
 // ESP-IDF 6.x
 //
-// Key fixes vs earlier version:
-//  - TX queue stores pointers (small queue, no huge RAM usage)
-//  - Reassembly is "correct": does NOT assume got-bytes means complete
-//    We handle 1-fragment frames and 2-fragment frames reliably (enough for Ethernet MTU).
-//
-// Recommended: set CONFIG_WB_MAX_PAYLOAD to 1200..1400
-// NOTE: With payload >= 800, 1600-byte frames are at most 2 fragments.
+// Fixes:
+//  - TX queue holds pointers (low RAM)
+//  - Reassembly uses fragment bitmap (works with >2 fragments, out-of-order)
+//  - Simple timeout resets stuck reassembly
 
 #include "udp_tunnel.h"
-#include "bridge_cfg.h"
 
 #include <string.h>
 #include <stdlib.h>
@@ -19,6 +15,7 @@
 #include <arpa/inet.h>
 
 #include "esp_log.h"
+#include "esp_timer.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "freertos/queue.h"
@@ -28,32 +25,37 @@ static const char *TAG = "wb_udp";
 #define WB_MAGIC 0xBEEF
 #define WB_VER   1
 
-#define WB_MAX_FRAME   1600                  // accept up to typical Ethernet frame sizes
-#define WB_MTU         CONFIG_WB_MAX_PAYLOAD  // fragment payload bytes
+#define WB_MAX_FRAME    1600
+#define WB_MTU          CONFIG_WB_MAX_PAYLOAD     // fragment payload bytes (400..1400)
+#define WB_MAX_FRAGS    8                         // enough: 1600/400=4, 1600/200=8 etc.
+#define WB_REASM_TO_MS  50                        // timeout for missing frags
 
 typedef struct __attribute__((packed)) {
     uint16_t magic;
     uint8_t  ver;
-    uint8_t  flags;       // bit0=frag (always 1 in this simple tunnel)
-    uint16_t seq;         // frame sequence
-    uint16_t frame_len;   // full ethernet frame length
-    uint16_t frag_off;    // offset in bytes
-    uint16_t frag_len;    // fragment bytes
-} wb_hdr_t;
-
-// Reassembly: 1 or 2 fragments (works for Ethernet MTU with WB_MTU >= 800)
-typedef struct {
+    uint8_t  flags;
     uint16_t seq;
     uint16_t frame_len;
-    uint8_t  mask;        // bit0: frag at off=0 received, bit1: frag at off>0 received
-    uint8_t  buf[WB_MAX_FRAME];
+    uint16_t frag_off;
+    uint16_t frag_len;
+} wb_hdr_t;
+
+// Reassembly state
+typedef struct {
     bool     in_use;
+    uint16_t seq;
+    uint16_t frame_len;
+    uint8_t  total_frags;     // expected fragments count
+    uint8_t  got_frags;       // how many received (unique)
+    uint8_t  bitmap;          // bit i = fragment i received (WB_MAX_FRAGS<=8)
+    int64_t  t_last_us;       // last fragment time
+    uint8_t  buf[WB_MAX_FRAME];
 } wb_reasm_t;
 
-// TX queue item (small): payload buffer allocated per frame
+// TX queue item
 typedef struct {
     uint16_t len;
-    uint8_t *buf;         // malloc'd, freed in tx task
+    uint8_t *buf;             // malloc'd, freed in tx task
 } tx_item_t;
 
 static int s_sock = -1;
@@ -73,50 +75,92 @@ uint32_t wb_udp_get_tx(void){ return s_tx; }
 uint32_t wb_udp_get_rx(void){ return s_rx; }
 uint32_t wb_udp_get_drop(void){ return s_drop; }
 
+static uint8_t calc_total_frags(uint16_t frame_len)
+{
+    // ceil(frame_len / WB_MTU)
+    uint32_t n = (frame_len + WB_MTU - 1) / WB_MTU;
+    if (n == 0) n = 1;
+    if (n > WB_MAX_FRAGS) return 0; // unsupported
+    return (uint8_t)n;
+}
+
 static void reasm_reset(uint16_t seq, uint16_t frame_len)
 {
+    memset(&s_re, 0, sizeof(s_re));
+    s_re.in_use = true;
     s_re.seq = seq;
     s_re.frame_len = frame_len;
-    s_re.mask = 0;
-    s_re.in_use = true;
+    s_re.total_frags = calc_total_frags(frame_len);
+    s_re.t_last_us = esp_timer_get_time();
+    // if total_frags==0 -> will be dropped by handler
+}
+
+static void reasm_maybe_timeout(void)
+{
+    if (!s_re.in_use) return;
+    int64_t now = esp_timer_get_time();
+    if ((now - s_re.t_last_us) > (int64_t)WB_REASM_TO_MS * 1000) {
+        // drop incomplete frame
+        s_drop++;
+        s_re.in_use = false;
+    }
 }
 
 static void handle_packet(const uint8_t *p, int n)
 {
+    reasm_maybe_timeout();
+
     if (n < (int)sizeof(wb_hdr_t)) { s_drop++; return; }
 
     wb_hdr_t h;
     memcpy(&h, p, sizeof(h));
 
     if (h.magic != WB_MAGIC || h.ver != WB_VER) { s_drop++; return; }
-
     if (h.frame_len == 0 || h.frame_len > WB_MAX_FRAME) { s_drop++; return; }
     if ((int)(sizeof(wb_hdr_t) + h.frag_len) != n) { s_drop++; return; }
     if ((uint32_t)h.frag_off + (uint32_t)h.frag_len > (uint32_t)h.frame_len) { s_drop++; return; }
+    if (h.frag_len == 0 || h.frag_len > WB_MTU) { s_drop++; return; }
+
+    // determine fragment index
+    if ((h.frag_off % WB_MTU) != 0) {
+        // require aligned offsets (simplifies reassembly). last fragment still aligned by off
+        s_drop++;
+        return;
+    }
+    uint16_t frag_idx = (uint16_t)(h.frag_off / WB_MTU);
+    if (frag_idx >= WB_MAX_FRAGS) { s_drop++; return; }
 
     const uint8_t *payload = p + sizeof(wb_hdr_t);
 
-    // New frame or frame changed -> reset
+    // new frame
     if (!s_re.in_use || s_re.seq != h.seq || s_re.frame_len != h.frame_len) {
         reasm_reset(h.seq, h.frame_len);
+        if (s_re.total_frags == 0) { // too many fragments needed
+            s_drop++;
+            s_re.in_use = false;
+            return;
+        }
     }
 
-    // Copy fragment into buffer
+    // total_frags validation: index must be within expected
+    if (frag_idx >= s_re.total_frags) { s_drop++; return; }
+
+    // copy payload
     memcpy(&s_re.buf[h.frag_off], payload, h.frag_len);
 
-    // Mark which fragment we got (we only need 2-fragment logic for Ethernet MTU)
-    if (h.frag_off == 0) s_re.mask |= 0x01;
-    else                 s_re.mask |= 0x02;
-
-    // 1-fragment frame: offset 0 and frag_len == frame_len
-    if ((s_re.mask & 0x01) && h.frag_off == 0 && h.frag_len == h.frame_len) {
-        if (s_rx_cb) s_rx_cb(s_re.buf, s_re.frame_len, s_rx_user);
-        s_re.in_use = false;
-        return;
+    // mark received (avoid double-counting)
+    uint8_t bit = (uint8_t)(1u << frag_idx);
+    if ((s_re.bitmap & bit) == 0) {
+        s_re.bitmap |= bit;
+        s_re.got_frags++;
     }
 
-    // 2-fragment frame: require both parts
-    if (s_re.mask == 0x03) {
+    s_re.t_last_us = esp_timer_get_time();
+
+    // complete when got all fragments
+    if (s_re.got_frags >= s_re.total_frags) {
+        // also sanity check last fragment length matches frame_len
+        // (optional strictness)
         if (s_rx_cb) s_rx_cb(s_re.buf, s_re.frame_len, s_rx_user);
         s_re.in_use = false;
     }
@@ -138,7 +182,6 @@ static void udp_rx_task(void *arg)
 static void udp_tx_task(void *arg)
 {
     (void)arg;
-
     tx_item_t it;
 
     while (1) {
@@ -214,7 +257,6 @@ void wb_udp_start(wb_frame_rx_cb_t cb, void *user)
     s_peer.sin_addr.s_addr = inet_addr("192.168.50.1");
 #endif
 
-    // Small queue: only pointers + length
     s_txq = xQueueCreate(16, sizeof(tx_item_t));
     if (!s_txq) {
         ESP_LOGE(TAG, "xQueueCreate failed (no RAM)");
@@ -249,7 +291,6 @@ bool wb_udp_send_frame(const uint8_t *frame, size_t len)
 
     if (xQueueSend(s_txq, &it, 0) == pdTRUE) return true;
 
-    // Queue full
     free(it.buf);
     s_drop++;
     return false;

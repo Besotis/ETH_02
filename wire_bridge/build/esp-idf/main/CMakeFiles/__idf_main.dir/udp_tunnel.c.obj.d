@@ -15,7 +15,6 @@ esp-idf/main/CMakeFiles/__idf_main.dir/udp_tunnel.c.obj: \
  /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_intsup.h \
  /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_stdint.h \
  /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdbool.h \
- /Users/macbookair/esp/ETH_02/wire_bridge/main/bridge_cfg.h \
  /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h \
  /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_locale.h \
  /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/strings.h \
@@ -176,4 +175,6 @@ esp-idf/main/CMakeFiles/__idf_main.dir/udp_tunnel.c.obj: \
  /Users/macbookair/esp-idf/components/log/include/esp_log_format.h \
  /Users/macbookair/esp-idf/components/log/include/esp_log_args.h \
  /Users/macbookair/esp-idf/components/log/include/esp_log_attr.h \
- /Users/macbookair/esp-idf/components/log/include/esp_private/log_attr.h
+ /Users/macbookair/esp-idf/components/log/include/esp_private/log_attr.h \
+ /Users/macbookair/esp-idf/components/esp_timer/include/esp_timer.h \
+ /Users/macbookair/esp-idf/components/esp_hw_support/etm/include/esp_etm.h

@@ -22,11 +22,6 @@ esp-idf/main/CMakeFiles/__idf_main.dir/eth_tap.c.obj: \
  /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_locale.h \
  /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_wait.h \
  /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/assert.h \
- /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h \
- /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/strings.h \
- /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_types.h \
- /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_types.h \
- /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/string.h \
  /Users/macbookair/esp-idf/components/log/include/esp_log.h \
  /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdarg.h \
  /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/inttypes.h \
@@ -43,36 +38,23 @@ esp-idf/main/CMakeFiles/__idf_main.dir/eth_tap.c.obj: \
  /Users/macbookair/esp-idf/components/log/include/esp_log_write.h \
  /Users/macbookair/esp-idf/components/log/include/esp_log_format.h \
  /Users/macbookair/esp-idf/components/log/include/esp_log_args.h \
+ /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h \
+ /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/strings.h \
+ /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_types.h \
+ /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_types.h \
+ /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/string.h \
  /Users/macbookair/esp-idf/components/esp_common/include/esp_macros.h \
  /Users/macbookair/esp-idf/components/esp_common/include/esp_assert.h \
  /Users/macbookair/esp-idf/components/esp_common/include/esp_compiler.h \
  /Users/macbookair/esp-idf/components/log/include/esp_log_attr.h \
  /Users/macbookair/esp-idf/components/esp_common/include/esp_attr.h \
  /Users/macbookair/esp-idf/components/log/include/esp_private/log_attr.h \
- /Users/macbookair/esp-idf/components/esp_eth/include/esp_eth.h \
- /Users/macbookair/esp-idf/components/esp_eth/include/esp_eth_driver.h \
- /Users/macbookair/esp-idf/components/esp_eth/include/esp_eth_com.h \
+ /Users/macbookair/esp-idf/components/esp_event/include/esp_event.h \
  /Users/macbookair/esp-idf/components/esp_common/include/esp_err.h \
  /Users/macbookair/esp-idf/components/esp_libc/platform_include/stdio.h \
  /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdio.h \
  /Users/macbookair/esp-idf/components/esp_libc/platform_include/sys/lock.h \
  /Users/macbookair/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/lock.h \
- /Users/macbookair/esp-idf/components/esp_event/include/esp_event_base.h \
- /Users/macbookair/esp-idf/components/esp_hal_emac/include/hal/eth_types.h \
- /Users/macbookair/esp-idf/components/esp_eth/include/esp_eth_spec.h \
- /Users/macbookair/esp-idf/components/esp_eth/include/esp_eth_mac_spi.h \
- /Users/macbookair/esp-idf/components/esp_eth/include/esp_eth_mac.h \
- /Users/macbookair/esp-idf/components/esp_driver_spi/include/driver/spi_master.h \
- /Users/macbookair/esp-idf/components/esp_hal_gpspi/include/hal/spi_types.h \
- /Users/macbookair/esp-idf/components/esp_common/include/esp_bit_defs.h \
- /Users/macbookair/esp-idf/components/soc/esp32/include/soc/clk_tree_defs.h \
- /Users/macbookair/esp-idf/components/esp_driver_spi/include/driver/spi_common.h \
- /Users/macbookair/esp-idf/components/esp_system/include/esp_ipc.h \
- /Users/macbookair/esp-idf/components/esp_hw_support/include/esp_intr_types.h \
- /Users/macbookair/esp-idf/components/esp_eth/include/esp_eth_mac_esp.h \
- /Users/macbookair/esp-idf/components/esp_eth/include/esp_eth_phy.h \
- /Users/macbookair/esp-idf/components/esp_eth/include/esp_eth_netif_glue.h \
- /Users/macbookair/esp-idf/components/esp_event/include/esp_event.h \
  /Users/macbookair/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/FreeRTOS.h \
  /Users/macbookair/esp-idf/components/freertos/config/include/freertos/FreeRTOSConfig.h \
  /Users/macbookair/esp-idf/components/freertos/config/xtensa/include/freertos/FreeRTOSConfig_arch.h \
@@ -102,7 +84,9 @@ esp-idf/main/CMakeFiles/__idf_main.dir/eth_tap.c.obj: \
  /Users/macbookair/esp-idf/components/xtensa/include/xtensa_api.h \
  /Users/macbookair/esp-idf/components/xtensa/include/xt_utils.h \
  /Users/macbookair/esp-idf/components/xtensa/esp32/include/xtensa/config/extreg.h \
+ /Users/macbookair/esp-idf/components/esp_common/include/esp_bit_defs.h \
  /Users/macbookair/esp-idf/components/esp_hw_support/include/esp_intr_alloc.h \
+ /Users/macbookair/esp-idf/components/esp_hw_support/include/esp_intr_types.h \
  /Users/macbookair/esp-idf/components/esp_system/include/esp_private/crosscore_int.h \
  /Users/macbookair/esp-idf/components/esp_hw_support/include/esp_memory_utils.h \
  /Users/macbookair/esp-idf/components/soc/esp32/include/soc/soc.h \
@@ -130,4 +114,20 @@ esp-idf/main/CMakeFiles/__idf_main.dir/eth_tap.c.obj: \
  /Users/macbookair/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/stream_buffer.h \
  /Users/macbookair/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/event_groups.h \
  /Users/macbookair/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/timers.h \
+ /Users/macbookair/esp-idf/components/esp_event/include/esp_event_base.h \
+ /Users/macbookair/esp-idf/components/esp_eth/include/esp_eth.h \
+ /Users/macbookair/esp-idf/components/esp_eth/include/esp_eth_driver.h \
+ /Users/macbookair/esp-idf/components/esp_eth/include/esp_eth_com.h \
+ /Users/macbookair/esp-idf/components/esp_hal_emac/include/hal/eth_types.h \
+ /Users/macbookair/esp-idf/components/esp_eth/include/esp_eth_spec.h \
+ /Users/macbookair/esp-idf/components/esp_eth/include/esp_eth_mac_spi.h \
+ /Users/macbookair/esp-idf/components/esp_eth/include/esp_eth_mac.h \
+ /Users/macbookair/esp-idf/components/esp_driver_spi/include/driver/spi_master.h \
+ /Users/macbookair/esp-idf/components/esp_hal_gpspi/include/hal/spi_types.h \
+ /Users/macbookair/esp-idf/components/soc/esp32/include/soc/clk_tree_defs.h \
+ /Users/macbookair/esp-idf/components/esp_driver_spi/include/driver/spi_common.h \
+ /Users/macbookair/esp-idf/components/esp_system/include/esp_ipc.h \
+ /Users/macbookair/esp-idf/components/esp_eth/include/esp_eth_mac_esp.h \
+ /Users/macbookair/esp-idf/components/esp_eth/include/esp_eth_phy.h \
+ /Users/macbookair/esp-idf/components/esp_eth/include/esp_eth_netif_glue.h \
  /Users/macbookair/esp/ETH_02/wire_bridge/managed_components/espressif__lan87xx/include/esp_eth_phy_lan87xx.h

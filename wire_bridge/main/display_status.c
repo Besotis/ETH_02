@@ -68,25 +68,25 @@ static void ui_create(lv_disp_t *disp)
 
     // Title
     lbl_title = lv_label_create(scr);
-    lv_label_set_text(lbl_title, "WT32 BRIDGE");
+    lv_label_set_text(lbl_title, "DigiNet Bridge @MGtools");
     lv_obj_set_style_text_color(lbl_title, lv_color_white(), 0);
     lv_obj_align(lbl_title, LV_ALIGN_TOP_MID, 0, 10);
 
     // ETH
     lbl_eth = lv_label_create(scr);
-    lv_label_set_text(lbl_eth, "ETH: ...");
+    lv_label_set_text(lbl_eth, "ETH : ...");
     lv_obj_set_style_text_color(lbl_eth, lv_color_white(), 0);
     lv_obj_align(lbl_eth, LV_ALIGN_TOP_LEFT, 10, 50);
 
     // WIFI
     lbl_wifi = lv_label_create(scr);
-    lv_label_set_text(lbl_wifi, "WIFI: ...");
+    lv_label_set_text(lbl_wifi, "WIFI : ...");
     lv_obj_set_style_text_color(lbl_wifi, lv_color_white(), 0);
     lv_obj_align(lbl_wifi, LV_ALIGN_TOP_LEFT, 10, 80);
 
     // UDP counters
     lbl_udp = lv_label_create(scr);
-    lv_label_set_text(lbl_udp, "UDP TX:0 RX:0 D:0");
+    lv_label_set_text(lbl_udp, "UDP TX : 0 RX : 0 D : 0");
     lv_obj_set_style_text_color(lbl_udp, lv_color_white(), 0);
     lv_obj_align(lbl_udp, LV_ALIGN_TOP_LEFT, 10, 110);
 
