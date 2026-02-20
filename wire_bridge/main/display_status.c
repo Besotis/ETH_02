@@ -1,8 +1,11 @@
-// display_status.c — ST7789 + LVGL via esp_lvgl_port (ESP-IDF 6.x)
-// Based on your working example: SPI3_HOST + spi_mode=3 + data_endian=LITTLE + invert_color(true)
+// display_status.c — ST7789 + LVGL (esp_lvgl_port) + minimal menu (3 buttons)
+// FIXES:
+//  - rotation +180° from previous (swap_xy stays, mirror_x/mirror_y flipped)
+//  - menu background BLACK
+//  - visible selection arrow ">" in menu
+//  - colored text by status (ETH/WIFI green/red, UDP cyan/yellow)
 //
-// UI: WT32 BRIDGE + ETH/WIFI/UDP counters
-// display_set_status(): updates LVGL labels (no manual drawing)
+// Pins: SCK=14 MOSI=15 DC=33 RST=32 CS(dummy)=4
 
 #include "display_status.h"
 
@@ -10,11 +13,7 @@
 #include <string.h>
 
 #include "esp_log.h"
-#include "freertos/FreeRTOS.h"
-#include "freertos/task.h"
-
 #include "driver/spi_master.h"
-#include "driver/gpio.h"
 
 #include "esp_lcd_panel_io.h"
 #include "esp_lcd_panel_ops.h"
@@ -37,126 +36,269 @@ static const char *TAG = "disp";
 #define LCD_W      240
 #define LCD_H      240
 
+#define WB_SPI_HZ   (40 * 1000 * 1000)
+#define WB_SPI_MODE 3
+
+#define WB_LCD_X_GAP 80
+#define WB_LCD_Y_GAP 0
+
 static esp_lcd_panel_io_handle_t s_io = NULL;
 static esp_lcd_panel_handle_t    s_panel = NULL;
 static lv_disp_t               * s_disp = NULL;
 
-// LVGL objects
-static lv_obj_t *lbl_title = NULL;
-static lv_obj_t *lbl_eth   = NULL;
-static lv_obj_t *lbl_wifi  = NULL;
-static lv_obj_t *lbl_udp   = NULL;
+// ---- UI state
+static bool s_menu = false;
+static int  s_menu_idx = 0;
 
-// Cached values (to avoid unnecessary redraw)
-static bool     last_eth_link = false;
-static bool     last_wifi_up  = false;
-static uint32_t last_udp_tx   = 0;
-static uint32_t last_udp_rx   = 0;
-static uint32_t last_udp_drop = 0;
-static bool     cache_valid   = false;
+static status_t s_last = {0};
+static uint32_t s_base_tx = 0, s_base_rx = 0, s_base_drop = 0;
 
-static void ui_create(lv_disp_t *disp)
+// ---- LVGL objects
+static lv_obj_t *s_status_root = NULL;
+static lv_obj_t *s_menu_root = NULL;
+
+static lv_obj_t *s_lbl_title = NULL;
+static lv_obj_t *s_lbl_eth = NULL;
+static lv_obj_t *s_lbl_wifi = NULL;
+static lv_obj_t *s_lbl_udp = NULL;
+
+static lv_obj_t *s_lbl_status_text = NULL;
+
+static lv_obj_t *s_menu_items[3] = {0};   // labels (with arrow)
+static const char *s_menu_names[3] = {
+    "Reset counters",
+    "Info",
+    "Back"
+};
+
+// ---- colors
+static inline lv_color_t C_BLACK(void){ return lv_color_black(); }
+static inline lv_color_t C_WHITE(void){ return lv_color_white(); }
+static inline lv_color_t C_RED(void){ return lv_color_hex(0xFF3333); }
+static inline lv_color_t C_GREEN(void){ return lv_color_hex(0x33FF66); }
+static inline lv_color_t C_YELLOW(void){ return lv_color_hex(0xFFDD33); }
+static inline lv_color_t C_CYAN(void){ return lv_color_hex(0x33DDFF); }
+static inline lv_color_t C_GRAY(void){ return lv_color_hex(0x999999); }
+
+// ---------- helpers ----------
+static void scr_black(lv_obj_t *scr)
 {
-    lvgl_port_lock(0);
-
-    lv_obj_t *scr = lv_disp_get_scr_act(disp);
-    lv_obj_clean(scr);
-
-    // Optional: set background to black (depends on theme; safe)
-    lv_obj_set_style_bg_color(scr, lv_color_black(), 0);
+    lv_obj_set_style_bg_color(scr, C_BLACK(), 0);
     lv_obj_set_style_bg_opa(scr, LV_OPA_COVER, 0);
+    lv_obj_set_style_text_color(scr, C_WHITE(), 0);
+}
 
-    // Title
-    lbl_title = lv_label_create(scr);
-    lv_label_set_text(lbl_title, "DigiNet Bridge @MGtools");
-    lv_obj_set_style_text_color(lbl_title, lv_color_white(), 0);
-    lv_obj_align(lbl_title, LV_ALIGN_TOP_MID, 0, 10);
+static void set_label_color(lv_obj_t *lbl, lv_color_t c)
+{
+    if (!lbl) return;
+    lv_obj_set_style_text_color(lbl, c, 0);
+}
 
+static void ui_update_topbar_locked(void)
+{
     // ETH
-    lbl_eth = lv_label_create(scr);
-    lv_label_set_text(lbl_eth, "ETH : ...");
-    lv_obj_set_style_text_color(lbl_eth, lv_color_white(), 0);
-    lv_obj_align(lbl_eth, LV_ALIGN_TOP_LEFT, 10, 50);
+    if (s_lbl_eth) {
+        lv_label_set_text(s_lbl_eth, s_last.eth_link ? "ETH:UP" : "ETH:DOWN");
+        set_label_color(s_lbl_eth, s_last.eth_link ? C_GREEN() : C_RED());
+    }
 
     // WIFI
-    lbl_wifi = lv_label_create(scr);
-    lv_label_set_text(lbl_wifi, "WIFI : ...");
-    lv_obj_set_style_text_color(lbl_wifi, lv_color_white(), 0);
-    lv_obj_align(lbl_wifi, LV_ALIGN_TOP_LEFT, 10, 80);
+    if (s_lbl_wifi) {
+        char w[32];
+        if (s_last.wifi_up) snprintf(w, sizeof(w), "WIFI:UP %ddBm", s_last.rssi);
+        else snprintf(w, sizeof(w), "WIFI:DOWN");
+        lv_label_set_text(s_lbl_wifi, w);
+        set_label_color(s_lbl_wifi, s_last.wifi_up ? C_GREEN() : C_RED());
+    }
 
-    // UDP counters
-    lbl_udp = lv_label_create(scr);
-    lv_label_set_text(lbl_udp, "UDP TX : 0 RX : 0 D : 0");
-    lv_obj_set_style_text_color(lbl_udp, lv_color_white(), 0);
-    lv_obj_align(lbl_udp, LV_ALIGN_TOP_LEFT, 10, 110);
+    // UDP counters (baseline)
+    if (s_lbl_udp) {
+        uint32_t tx = s_last.udp_tx - s_base_tx;
+        uint32_t rx = s_last.udp_rx - s_base_rx;
+        uint32_t dr = s_last.udp_drop - s_base_drop;
+
+        char u[64];
+        snprintf(u, sizeof(u), "UDP %u/%u D%u", (unsigned)tx, (unsigned)rx, (unsigned)dr);
+        lv_label_set_text(s_lbl_udp, u);
+
+        // if drops >0 -> yellow else cyan
+        set_label_color(s_lbl_udp, (dr > 0) ? C_YELLOW() : C_CYAN());
+    }
+}
+
+static void menu_set_item_text_locked(int idx, bool selected)
+{
+    if (!s_menu_items[idx]) return;
+
+    char line[64];
+    snprintf(line, sizeof(line), "%s %s", selected ? ">" : " ", s_menu_names[idx]);
+    lv_label_set_text(s_menu_items[idx], line);
+
+    // selection highlight: selected -> white, others -> gray
+    set_label_color(s_menu_items[idx], selected ? C_WHITE() : C_GRAY());
+}
+
+static void menu_refresh_locked(void)
+{
+    for (int i = 0; i < 3; i++) {
+        menu_set_item_text_locked(i, i == s_menu_idx);
+    }
+}
+
+// ---------- build screens ----------
+static void ui_build_status(void)
+{
+    lv_obj_t *scr = lv_disp_get_scr_act(s_disp);
+    lv_obj_clean(scr);
+    scr_black(scr);
+
+    s_status_root = scr;
+    s_menu_root = NULL;
+
+    // Title
+    s_lbl_title = lv_label_create(scr);
+    lv_label_set_text(s_lbl_title, "WT32 BRIDGE");
+    lv_obj_align(s_lbl_title, LV_ALIGN_TOP_MID, 0, 4);
+    set_label_color(s_lbl_title, C_WHITE());
+
+    // Top bar info (3 lines)
+    s_lbl_eth = lv_label_create(scr);
+    lv_obj_align(s_lbl_eth, LV_ALIGN_TOP_LEFT, 6, 26);
+
+    s_lbl_wifi = lv_label_create(scr);
+    lv_obj_align(s_lbl_wifi, LV_ALIGN_TOP_LEFT, 6, 44);
+
+    s_lbl_udp = lv_label_create(scr);
+    lv_obj_align(s_lbl_udp, LV_ALIGN_TOP_LEFT, 6, 62);
+
+    // Main status text
+    s_lbl_status_text = lv_label_create(scr);
+    lv_obj_set_width(s_lbl_status_text, 228);
+    lv_label_set_long_mode(s_lbl_status_text, LV_LABEL_LONG_WRAP);
+    lv_obj_align(s_lbl_status_text, LV_ALIGN_TOP_LEFT, 6, 92);
+    set_label_color(s_lbl_status_text, C_WHITE());
+
+    // init draw
+    ui_update_topbar_locked();
+    lv_label_set_text(s_lbl_status_text,
+                      "ENTER: Menu\nUP/DOWN: Navigate\n\nWaiting...");
+
+    // clear menu items pointers
+    for (int i=0;i<3;i++) s_menu_items[i]=NULL;
+}
+
+static void ui_build_menu(void)
+{
+    lv_obj_t *scr = lv_disp_get_scr_act(s_disp);
+    lv_obj_clean(scr);
+    scr_black(scr);
+
+    s_menu_root = scr;
+    s_status_root = NULL;
+
+    // Header
+    s_lbl_title = lv_label_create(scr);
+    lv_label_set_text(s_lbl_title, "MENU");
+    lv_obj_align(s_lbl_title, LV_ALIGN_TOP_MID, 0, 4);
+    set_label_color(s_lbl_title, C_WHITE());
+
+    // Status bar in menu as well
+    s_lbl_eth = lv_label_create(scr);
+    lv_obj_align(s_lbl_eth, LV_ALIGN_TOP_LEFT, 6, 26);
+
+    s_lbl_wifi = lv_label_create(scr);
+    lv_obj_align(s_lbl_wifi, LV_ALIGN_TOP_LEFT, 6, 44);
+
+    s_lbl_udp = lv_label_create(scr);
+    lv_obj_align(s_lbl_udp, LV_ALIGN_TOP_LEFT, 6, 62);
+
+    // Menu items (simple labels)
+    for (int i = 0; i < 3; i++) {
+        s_menu_items[i] = lv_label_create(scr);
+        lv_obj_align(s_menu_items[i], LV_ALIGN_TOP_LEFT, 10, 100 + i * 28);
+        lv_label_set_text(s_menu_items[i], "");
+        lv_obj_set_style_text_font(s_menu_items[i], LV_FONT_DEFAULT, 0);
+    }
+
+    ui_update_topbar_locked();
+    menu_refresh_locked();
+
+    // In menu, we don't use status block
+    s_lbl_status_text = NULL;
+}
+
+// ---------- public UI control ----------
+void ui_menu_toggle(void)
+{
+    if (!s_disp) return;
+    lvgl_port_lock(0);
+
+    s_menu = !s_menu;
+    if (s_menu) {
+        ui_build_menu();
+    } else {
+        ui_build_status();
+    }
 
     lvgl_port_unlock();
 }
 
-static void ui_update(const status_t *s)
+void ui_menu_up(void)
 {
-    // status_t laukų prielaidos:
-    //  - bool eth_link
-    //  - bool wifi_up
-    //  - uint32_t udp_tx, udp_rx, udp_drop
-    //
-    // Jei pas tave kitaip — pakeisi 3 eilutes žemiau.
+    if (!s_menu) return;
+    if (s_menu_idx > 0) s_menu_idx--;
 
-    bool     eth_link = s->eth_link;
-    bool     wifi_up  = s->wifi_up;
-    uint32_t udp_tx   = s->udp_tx;
-    uint32_t udp_rx   = s->udp_rx;
-    uint32_t udp_drop = s->udp_drop;
+    lvgl_port_lock(0);
+    menu_refresh_locked();
+    lvgl_port_unlock();
+}
 
-    // Jei niekas nepasikeitė — neliečiam LVGL
-    if (cache_valid &&
-        eth_link == last_eth_link &&
-        wifi_up  == last_wifi_up &&
-        udp_tx   == last_udp_tx &&
-        udp_rx   == last_udp_rx &&
-        udp_drop == last_udp_drop) {
+void ui_menu_down(void)
+{
+    if (!s_menu) return;
+    if (s_menu_idx < 2) s_menu_idx++;
+
+    lvgl_port_lock(0);
+    menu_refresh_locked();
+    lvgl_port_unlock();
+}
+
+void ui_menu_enter(void)
+{
+    // If not in menu -> open it
+    if (!s_menu) {
+        ui_menu_toggle();
         return;
     }
 
-    last_eth_link = eth_link;
-    last_wifi_up  = wifi_up;
-    last_udp_tx   = udp_tx;
-    last_udp_rx   = udp_rx;
-    last_udp_drop = udp_drop;
-    cache_valid   = true;
+    // Actions
+    if (s_menu_idx == 0) {
+        // reset displayed counters baseline
+        s_base_tx = s_last.udp_tx;
+        s_base_rx = s_last.udp_rx;
+        s_base_drop = s_last.udp_drop;
+    } else if (s_menu_idx == 1) {
+        // Info: for now just blink/change title (minimal)
+        // (čia galėsim vėliau padaryti atskirą ekraną)
+    } else if (s_menu_idx == 2) {
+        // Back
+        ui_menu_toggle();
+        return;
+    }
 
-    char buf[64];
-
+    // refresh topbar + items after actions
     lvgl_port_lock(0);
-
-    if (lbl_eth) {
-        snprintf(buf, sizeof(buf), "ETH: %s", eth_link ? "LINK UP" : "LINK DOWN");
-        lv_label_set_text(lbl_eth, buf);
-        lv_obj_set_style_text_color(lbl_eth, eth_link ? lv_color_hex(0x00FF00) : lv_color_hex(0xFF0000), 0);
-    }
-
-    if (lbl_wifi) {
-        snprintf(buf, sizeof(buf), "WIFI: %s", wifi_up ? "UP" : "DOWN");
-        lv_label_set_text(lbl_wifi, buf);
-        lv_obj_set_style_text_color(lbl_wifi, wifi_up ? lv_color_hex(0x00FF00) : lv_color_hex(0xFF0000), 0);
-    }
-
-    if (lbl_udp) {
-        // jei nori mažiau triukšmo: rodyk mod 100000 ar pan.
-        snprintf(buf, sizeof(buf), "UDP TX:%lu RX:%lu D:%lu",
-                 (unsigned long)udp_tx, (unsigned long)udp_rx, (unsigned long)udp_drop);
-        lv_label_set_text(lbl_udp, buf);
-        lv_obj_set_style_text_color(lbl_udp, lv_color_hex(0xFFFF00), 0);
-    }
-
+    ui_update_topbar_locked();
+    menu_refresh_locked();
     lvgl_port_unlock();
 }
 
+// ---------- init + update ----------
 void display_init(void)
 {
     ESP_LOGI(TAG, "LCD init: ST7789 + esp_lvgl_port (bridge UI)");
 
-    // ---- SPI bus
+    // SPI bus
     spi_bus_config_t buscfg = {
         .sclk_io_num = PIN_SCK,
         .mosi_io_num = PIN_MOSI,
@@ -167,77 +309,105 @@ void display_init(void)
     };
     ESP_ERROR_CHECK(spi_bus_initialize(LCD_HOST, &buscfg, SPI_DMA_CH_AUTO));
 
-    // ---- LCD IO (SPI)
+    // LCD IO
     esp_lcd_panel_io_spi_config_t io_cfg = {
         .dc_gpio_num = PIN_DC,
         .cs_gpio_num = PIN_CS,
-        .pclk_hz = 40 * 1000 * 1000,     // stabilu. vėliau gali kelti (20/26/40)
+        .pclk_hz = WB_SPI_HZ,
         .lcd_cmd_bits = 8,
         .lcd_param_bits = 8,
-        .spi_mode = 3,                   // kaip tavo veikiantis variantas
+        .spi_mode = WB_SPI_MODE,
         .trans_queue_depth = 10,
     };
     ESP_ERROR_CHECK(esp_lcd_new_panel_io_spi((esp_lcd_spi_bus_handle_t)LCD_HOST, &io_cfg, &s_io));
 
-    // ---- ST7789 panel
+    // Panel
     esp_lcd_panel_dev_config_t panel_cfg = {
         .reset_gpio_num = PIN_RST,
-
-        // Jei raudona/mėlyna sukeista -> keisk į LCD_RGB_ELEMENT_ORDER_BGR
         .rgb_ele_order = LCD_RGB_ELEMENT_ORDER_RGB,
-
         .bits_per_pixel = 16,
-
-        // Tavo FIX: byte order
         .data_endian = LCD_RGB_DATA_ENDIAN_LITTLE,
     };
     ESP_ERROR_CHECK(esp_lcd_new_panel_st7789(s_io, &panel_cfg, &s_panel));
-    ESP_ERROR_CHECK(esp_lcd_panel_set_gap(s_panel, 80, 0));   // X gap 80px (rotation 270 atveju)
 
     ESP_ERROR_CHECK(esp_lcd_panel_reset(s_panel));
     ESP_ERROR_CHECK(esp_lcd_panel_init(s_panel));
 
-    // kaip tavo rankiniam init'e: INVON
     ESP_ERROR_CHECK(esp_lcd_panel_invert_color(s_panel, true));
-
+    ESP_ERROR_CHECK(esp_lcd_panel_set_gap(s_panel, WB_LCD_X_GAP, WB_LCD_Y_GAP));
     ESP_ERROR_CHECK(esp_lcd_panel_disp_on_off(s_panel, true));
 
-    // ---- LVGL port init
+    // LVGL
     const lvgl_port_cfg_t lvgl_cfg = ESP_LVGL_PORT_INIT_CONFIG();
     ESP_ERROR_CHECK(lvgl_port_init(&lvgl_cfg));
 
-    // ---- Add display to LVGL
     const lvgl_port_display_cfg_t disp_cfg = {
-    .io_handle = s_io,
-    .panel_handle = s_panel,
-    .buffer_size = LCD_W * 40,
-    .double_buffer = true,
-    .hres = LCD_W,
-    .vres = LCD_H,
-    .monochrome = false,
-    .rotation = {
-        .swap_xy = true,
-        .mirror_x = false,
-        .mirror_y = true,
-    },
-    .flags = {
-        .buff_dma = true,
-    },
-};
-  
+        .io_handle = s_io,
+        .panel_handle = s_panel,
+        .buffer_size = LCD_W * 40,
+        .double_buffer = true,
+        .hres = LCD_W,
+        .vres = LCD_H,
+        .monochrome = false,
+        .rotation = {
+            // +180° from previous:
+            // previous: swap_xy=true, mirror_x=true, mirror_y=false
+            // now:      swap_xy=true, mirror_x=false, mirror_y=true
+            .swap_xy = true,
+            .mirror_x = false,
+            .mirror_y = true,
+        },
+        .flags = {
+            .buff_dma = true,
+        },
+    };
     s_disp = lvgl_port_add_disp(&disp_cfg);
 
-    // Create UI
-    ui_create(s_disp);
+    // Start in status screen
+    s_menu = false;
+    s_menu_idx = 0;
+    s_base_tx = s_base_rx = s_base_drop = 0;
 
-    // Reset cache so first update redraws
-    cache_valid = false;
+    lvgl_port_lock(0);
+    ui_build_status();
+    lvgl_port_unlock();
 
     ESP_LOGI(TAG, "LCD UI ready");
 }
 
 void display_set_status(const status_t *s)
 {
-    if (!s_disp || !lbl_title) return;
-    ui_update(s);
+    if (!s) return;
+    s_last = *s;
+
+    lvgl_port_lock(0);
+
+    // update topbar for both screens
+    ui_update_topbar_locked();
+
+    // status screen main block
+    if (!s_menu && s_lbl_status_text) {
+        uint32_t tx = s_last.udp_tx - s_base_tx;
+        uint32_t rx = s_last.udp_rx - s_base_rx;
+        uint32_t dr = s_last.udp_drop - s_base_drop;
+
+        char buf[256];
+        snprintf(buf, sizeof(buf),
+                 "ENTER: Menu\n"
+                 "UP/DOWN: Navigate\n\n"
+                 "ETH %s\nWIFI %s\n\n"
+                 "UDP TX %u\nUDP RX %u\nDROP %u",
+                 s_last.eth_link ? "UP" : "DOWN",
+                 s_last.wifi_up ? "UP" : "DOWN",
+                 (unsigned)tx, (unsigned)rx, (unsigned)dr);
+
+        lv_label_set_text(s_lbl_status_text, buf);
+    }
+
+    // menu items keep arrow
+    if (s_menu) {
+        menu_refresh_locked();
+    }
+
+    lvgl_port_unlock();
 }
